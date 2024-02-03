@@ -1,8 +1,3 @@
-![](https://img.shields.io/badge/Foundry-v10-informational)
-<!--- Downloads @ Latest Badge -->
-<!--- replace <user>/<repo> with your username/repository -->
-![Latest Release Download Count](https://img.shields.io/github/downloads/SetaSensei/lazy-monster-builder/latest/module.zip)
-
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
 
 This work is licensed under a
@@ -15,6 +10,8 @@ This work is licensed under a
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
 # Lazy Monster Builder
+
+![](https://img.shields.io/badge/Foundry-v11-informational) ![Latest Release Download Count](https://img.shields.io/github/downloads/SetaSensei/lazy-monster-builder/latest/module.zip)
 
 ## Legal Notice
 
