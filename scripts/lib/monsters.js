@@ -12,8 +12,8 @@ const MONSTERS_STATS = [
       "DpA": "2",
       "DpACalc": "1d4",
       "example": [
-        "Commoner,",
-        "rat,",
+        "Commoner",
+        "rat",
         "spider"
       ]
     },
@@ -30,11 +30,10 @@ const MONSTERS_STATS = [
       "DpA": "3",
       "DpACalc": "1d4+1",
       "example": [
-        "Bandit,",
-        "cultist,",
+        "Bandit",
+        "cultist",
         "giant",
-        "rat",
-        ""
+        "rat"
       ]
     },
     {
@@ -50,10 +49,9 @@ const MONSTERS_STATS = [
       "DpA": "5",
       "DpACalc": "1d6+2",
       "example": [
-        "Acolyte,",
-        "skeleton,",
-        "wolf",
-        ""
+        "Acolyte",
+        "skeleton",
+        "wolf"
       ]
     },
     {
@@ -70,10 +68,9 @@ const MONSTERS_STATS = [
       "DpACalc": "2d6+3",
       "example": [
         "Black",
-        "bear,",
-        "scout,",
-        "shadow",
-        ""
+        "bear",
+        "scout",
+        "shadow"
       ]
     },
     {
@@ -90,10 +87,9 @@ const MONSTERS_STATS = [
       "DpACalc": "1d8+2",
       "example": [
         "Dire",
-        "wolf,",
-        "specter,",
-        "spy",
-        ""
+        "wolf",
+        "specter",
+        "spy"
       ]
     },
     {
@@ -109,10 +105,9 @@ const MONSTERS_STATS = [
       "DpA": "9",
       "DpACalc": "2d6+2",
       "example": [
-        "Ghast,",
-        "ogre,",
-        "priest",
-        ""
+        "Ghast",
+        "ogre",
+        "priest"
       ]
     },
     {
@@ -128,10 +123,9 @@ const MONSTERS_STATS = [
       "DpA": "12",
       "DpACalc": "2d8+3",
       "example": [
-        "Knight,",
-        "mummy,",
-        "werewolf",
-        ""
+        "Knight",
+        "mummy",
+        "werewolf"
       ]
     },
     {
@@ -147,9 +141,8 @@ const MONSTERS_STATS = [
       "DpA": "15",
       "DpACalc": "3d8+2",
       "example": [
-        "Ettin,",
-        "ghost",
-        ""
+        "Ettin",
+        "ghost"
       ]
     },
     {
@@ -165,11 +158,10 @@ const MONSTERS_STATS = [
       "DpA": "12",
       "DpACalc": "3d6+2",
       "example": [
-        "Elemental,",
-        "gladiator,",
+        "Elemental",
+        "gladiator",
         "vampire",
-        "spawn",
-        ""
+        "spawn"
       ]
     },
     {
@@ -185,10 +177,9 @@ const MONSTERS_STATS = [
       "DpA": "14",
       "DpACalc": "3d6+4",
       "example": [
-        "Mage,",
-        "medusa,",
-        "wyvern",
-        ""
+        "Mage",
+        "medusa",
+        "wyvern"
       ]
     },
     {
@@ -205,11 +196,10 @@ const MONSTERS_STATS = [
       "DpACalc": "3d8+3",
       "example": [
         "Stone",
-        "giant,",
+        "giant",
         "young",
         "black",
-        "dragon",
-        ""
+        "dragon"
       ]
     },
     {
@@ -225,10 +215,9 @@ const MONSTERS_STATS = [
       "DpA": "18",
       "DpACalc": "3d10+2",
       "example": [
-        "Assassin,",
+        "Assassin",
         "frost",
-        "giant",
-        ""
+        "giant"
       ]
     },
     {
@@ -245,13 +234,12 @@ const MONSTERS_STATS = [
       "DpACalc": "3d12+3",
       "example": [
         "Bone",
-        "devil,",
+        "devil",
         "fire",
-        "giant,",
+        "giant",
         "young",
         "blue",
-        "dragon",
-        ""
+        "dragon"
       ]
     },
     {
@@ -268,11 +256,10 @@ const MONSTERS_STATS = [
       "DpACalc": "3d8+3",
       "example": [
         "Stone",
-        "golem,",
+        "golem",
         "young",
         "red",
-        "dragon",
-        ""
+        "dragon"
       ]
     },
     {
@@ -288,11 +275,10 @@ const MONSTERS_STATS = [
       "DpA": "18",
       "DpACalc": "3d10+2",
       "example": [
-        "Djinni,",
-        "efreeti,",
+        "Djinni",
+        "efreeti",
         "horned",
-        "devil",
-        ""
+        "devil"
       ]
     },
     {
@@ -308,9 +294,8 @@ const MONSTERS_STATS = [
       "DpA": "19",
       "DpACalc": "3d10+3",
       "example": [
-        "Archmage,",
-        "erinyes",
-        ""
+        "Archmage",
+        "erinyes"
       ]
     },
     {
@@ -328,11 +313,10 @@ const MONSTERS_STATS = [
       "example": [
         "Adult",
         "white",
-        "dragon,",
+        "dragon",
         "storm",
-        "giant,",
-        "vampire",
-        ""
+        "giant",
+        "vampire"
       ]
     },
     {
@@ -350,10 +334,9 @@ const MONSTERS_STATS = [
       "example": [
         "Adult",
         "black",
-        "dragon,",
+        "dragon",
         "ice",
-        "devil",
-        ""
+        "devil"
       ]
     },
     {
@@ -371,12 +354,11 @@ const MONSTERS_STATS = [
       "example": [
         "Adult",
         "green",
-        "dragon,",
+        "dragon",
         "mummy",
-        "lord,",
+        "lord",
         "purple",
-        "worm",
-        ""
+        "worm"
       ]
     },
     {
@@ -394,11 +376,10 @@ const MONSTERS_STATS = [
       "example": [
         "Adult",
         "blue",
-        "dragon,",
+        "dragon",
         "iron",
-        "golem,",
-        "marilith",
-        ""
+        "golem",
+        "marilith"
       ]
     },
     {
@@ -416,8 +397,7 @@ const MONSTERS_STATS = [
       "example": [
         "Adult",
         "red",
-        "dragon",
-        ""
+        "dragon"
       ]
     },
     {
@@ -433,8 +413,7 @@ const MONSTERS_STATS = [
       "DpA": "23",
       "DpACalc": "4d10+1",
       "example": [
-        "Demilich",
-        ""
+        "Demilich"
       ]
     },
     {
@@ -450,8 +429,7 @@ const MONSTERS_STATS = [
       "DpA": "24",
       "DpACalc": "4d10+2",
       "example": [
-        "Balor",
-        ""
+        "Balor"
       ]
     },
     {
@@ -469,10 +447,9 @@ const MONSTERS_STATS = [
       "example": [
         "Ancient",
         "white",
-        "dragon,",
+        "dragon",
         "pit",
-        "fiend",
-        ""
+        "fiend"
       ]
     },
     {
@@ -490,10 +467,9 @@ const MONSTERS_STATS = [
       "example": [
         "Ancient",
         "black",
-        "dragon,",
-        "lich,",
-        "solar",
-        ""
+        "dragon",
+        "lich",
+        "solar"
       ]
     },
     {
@@ -511,8 +487,7 @@ const MONSTERS_STATS = [
       "example": [
         "Ancient",
         "green",
-        "dragon",
-        ""
+        "dragon"
       ]
     },
     {
@@ -530,9 +505,8 @@ const MONSTERS_STATS = [
       "example": [
         "Ancient",
         "blue",
-        "dragon,",
-        "kraken",
-        ""
+        "dragon",
+        "kraken"
       ]
     },
     {
@@ -550,8 +524,7 @@ const MONSTERS_STATS = [
       "example": [
         "Ancient",
         "red",
-        "dragon",
-        ""
+        "dragon"
       ]
     },
     {
@@ -567,7 +540,6 @@ const MONSTERS_STATS = [
       "DpA": "44",
       "DpACalc": "6d10+11",
       "example": [
-        ""
       ]
     },
     {
@@ -647,8 +619,7 @@ const MONSTERS_STATS = [
       "DpA": "62",
       "DpACalc": "6d10+29",
       "example": [
-        "Tarrasque",
-        ""
+        "Tarrasque"
       ]
     }
   ]

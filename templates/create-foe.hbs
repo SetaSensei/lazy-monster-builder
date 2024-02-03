@@ -1,19 +1,56 @@
-<form>
-    <div class="form-group">
-    
-        <label for="cr-value">CR :</label>
-        <select id="cr-value" name="crValue">
-        {{#each options.stats}}
-            <option value="{{this.CR}}">{{this.CR}}</option>
-        {{/each}}
-        </select>
+<form class="flexcol" autocomplete="off">
+  <header> <h2>Select CR and monster type</h2> </header>
+  <div class="form-group">
+
+    <label for="cr-value">CR :</label>
+    <select id="cr-value" name="crValue">
+      {{#each options.stats}}
+        <option value="{{this.CR}}" data-noa="{{this.NoA}}" data-hp="{{this.HP}}" data-dmg="{{this.DpACalc}}" data-ac="{{this.ACDC}}" data-exp="{{this.example}}">{{this.CR}} ({{this.example}})</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="monster-type">Foe Type :</label>
+    <select id="monster-type" name="monsterType">
+      {{#each options.type}}
+        <option value="{{this.name}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <header> <h2>Future monster in a nutshell</h2> </header>
+  <div class="form-group" style="padding-left: 10%">
+    <div class="flex0">
+      <h4><i class="fa-solid fa-heart"></i>&nbsp;<label id="hpLabel">{{options.stats.[0].HP}}</label></h4>
     </div>
-    <div class="form-group">
-        <label for="monster-type">Foe Type :</label>
-        <select id="monster-type" name="monsterType">
-            {{#each options.type}}
-            <option value="{{this.name}}">{{this.name}}</option>
-            {{/each}}
-        </select>
+    <div class="flex0">
+      <h4><i class="fa-solid fa-swords"></i>&nbsp;<label id="dmgLabel">{{options.stats.[0].DpACalc}} x 1</label></h4>
     </div>
+    <div class="flex0"> 
+      <h4><i class="fa-solid fa-shield"></i>&nbsp;<label id="acLabel">{{options.stats.[0].ACDC}}</label></h4>
+    </div>
+  </div>
+  <div class="form-group">
+    <label id="expLabel">Example: {{options.stats.[0].example}}</label>
+  </div>
 </form>
+<script>
+  document.getElementById('cr-value').addEventListener('change', function() {
+    const hpLabel = document.getElementById('hpLabel');
+    const dmgLabel = document.getElementById('dmgLabel');
+    const expLabel = document.getElementById('expLabel');
+    const acLabel = document.getElementById('acLabel');
+
+    const selectedOption = this.options[this.selectedIndex];
+
+    const hpValue = selectedOption.getAttribute('data-hp');
+    const noaValue = selectedOption.getAttribute('data-noa');
+    const dmgValue = selectedOption.getAttribute('data-dmg');
+    const expValue = selectedOption.getAttribute('data-exp');
+    const acValue = selectedOption.getAttribute('data-ac');
+
+    hpLabel.textContent = hpValue;
+    dmgLabel.textContent = dmgValue + " x " + noaValue;
+    expLabel.textContent = "Example: " + expValue;
+    acLabel.textContent = acValue;
+   });
+</script>
