@@ -2,7 +2,7 @@ import { vttLog, vttError, getFolderPath } from './lib/moduleLib.js'
 import { MONSTERS_STATS, MONSTERS_TYPE } from './lib/monsters.js'
 import Menagerie from './lib/menagerie.js';
 
-CONFIG.debug.hooks = true
+CONFIG.debug.hooks = false
 
 Hooks.once('init', async function () {
     var f = new Menagerie()
@@ -54,7 +54,7 @@ async function createActor(context) {
 
     const type = MONSTERS_TYPE[context.find('#monster-type')[0].selectedIndex]
 
-    vttLog(`Creating monster ${type} CR ${crInfos.CR}`, true)
+    vttLog(`Creating monster ${type.name} CR ${crInfos.CR}`, true)
 
     let itemData = {
         name: "Attack",
@@ -117,11 +117,5 @@ async function createActor(context) {
 
     vttLog(`Monster created, have fun !`, true)
 }
-
-Hooks.on('renderSidebar', async (app, html, data) => {
-
-    vttLog('renderSidebar')
-})
-
 
 
