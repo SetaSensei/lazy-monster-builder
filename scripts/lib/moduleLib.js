@@ -7,7 +7,7 @@ const LOCAL_CONFIG = {
 
 
 export function getFolderPath() {
-    return 'modules/forgemyfoes/'
+    return 'modules/lazy-monster-builder/'
 }
 
 const vttLog = function (message, showOnUI = false) {

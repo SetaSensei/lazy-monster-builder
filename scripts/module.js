@@ -27,13 +27,13 @@ function generate(app, html, data) {
 }
 
 async function showMonsterForm(event) {
-    const hbs = await fetch('modules/forgemyfoes/templates/create-foe.hbs').then(response => response.text());
+    const hbs = await fetch(`${getFolderPath()}/templates/create-foe.hbs`).then(response => response.text());
     const template = Handlebars.compile(hbs);
     const options = { stats: MONSTERS_STATS, type: MONSTERS_TYPE }
     const html = template({ options })
 
     new Dialog({
-        title: "Forge a Foe",
+        title: "Create a monster",
         content: html,
         buttons: {
             ok: {
