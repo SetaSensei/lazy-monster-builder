@@ -3,12 +3,10 @@
   "title": "Lazy Monster Builder",
   "description": "Generates monsters on the fly for 5e. Based on the Lazy GM's 5e Monster Builder Resource Document.",
   "version": "#{VERSION}#",
-  "library": "false",
-  "manifestPlusVersion": "1.2.0",
   "compatibility": {
-    "minimum": 10,
-    "verified": 10,
-    "maximum": 11
+    "minimum": "10",
+    "verified": "10",
+    "maximum": "11"
   },
   "authors": [
     {
@@ -18,8 +16,12 @@
     }
   ],
   "relationships": {
-    "systems": ["DnD5e"],
-    "requires": []
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system"
+      }
+    ]
   },
   "esmodules": [
     "scripts/module.js"
@@ -39,7 +41,9 @@
   "media": [
     {
       "type": "icon",
-      "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4"
+      "url": "https://avatars2.githubusercontent.com/u/71292812?s=400&u=ccdb4eeb7abf551ca8f314e5a9bfd0479a4d3d41&v=4",
+      "loop": false,
+      "flags": {}
     }
   ]
 }
