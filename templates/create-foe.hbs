@@ -1,0 +1,19 @@
+<form>
+    <div class="form-group">
+    
+        <label for="cr-value">CR :</label>
+        <select id="cr-value" name="crValue">
+        {{#each options.stats}}
+            <option value="{{this.CR}}">{{this.CR}}</option>
+        {{/each}}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="monster-type">Foe Type :</label>
+        <select id="monster-type" name="monsterType">
+            {{#each options.type}}
+            <option value="{{this.name}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+    </div>
+</form>

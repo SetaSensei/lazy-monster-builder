@@ -1,7 +1,7 @@
 {
-  "id": "module",
-  "title": "New Module",
-  "description": "",
+  "id": "lazy-monster-builder",
+  "title": "Lazy Monster Builder",
+  "description": "Generates monsters on the fly for 5e. Based on the Lazy GM's 5e Monster Builder Resource Document.",
   "version": "#{VERSION}#",
   "library": "false",
   "manifestPlusVersion": "1.2.0",
@@ -12,30 +12,24 @@
   },
   "authors": [
     {
-      "name": "The League of Extraordinary FVTT Developers",
+      "name": "SetaSensei",
       "url": "https://github.com/League-of-Foundry-Developers",
-      "discord": "discordID#0001"
+      "discord": "setasensei"
     }
   ],
   "relationships": {
-    "systems": [],
+    "systems": ["DnD5e"],
     "requires": []
   },
   "esmodules": [
     "scripts/module.js"
   ],
   "scripts": [
-    "scripts/lib/lib.js"
+    "scripts/lib/lib.js",
+    "scripts/lib/moduleLib.js"
   ],
   "styles": [
     "styles/module.css"
-  ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "languages/en.json"
-    }
   ],
   "url": "#{URL}#",
   "manifest": "#{MANIFEST}#",
