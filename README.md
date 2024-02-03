@@ -19,6 +19,6 @@ This work includes material taken from the [Lazy GM's 5e Monster Builder Resourc
 
 Lets you create monsters on the fly
 
-![Example]([link to image / GIF](https://cdn.discordapp.com/attachments/1162758757693014178/1203346693290983474/lazymonsterbuilder.webm)
+![Example](https://cdn.discordapp.com/attachments/1162758757693014178/1203346693290983474/lazymonsterbuilder.webm)
 
 ## Changelog
