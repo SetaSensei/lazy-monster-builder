@@ -5,8 +5,8 @@ import Menagerie from './lib/menagerie.js';
 CONFIG.debug.hooks = false
 
 Hooks.once('init', async function () {
-    var f = new Menagerie()
-    console.log(f)
+    // var f = new Menagerie()
+    // console.log(f)
 });
 
 Hooks.once('ready', async function () {
@@ -20,7 +20,7 @@ Hooks.on('changeSidebarTab', async (app, html, data) => generate(app, html, data
 function generate(app, html, data) {
     if (app.options.classes.includes('actors-sidebar') && app._element.find('.create-monster').length == 0) {
         const actionsTabButton = $('<button class="create-document create-monster"><i class="fa-solid fa-spaghetti-monster-flying"></i> Generate Monster</button>');
-        const create = app._element.find('.create-entry')
+        const create = app._element.find('button.create-entry')
         actionsTabButton.insertBefore(create)
         actionsTabButton.on('click', showMonsterForm)
     }
