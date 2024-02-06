@@ -15,6 +15,7 @@ This work is licensed under a
 
 In the *Actors* section on the right panel, you should see a "Generate Monster" button
 
+
 ![image](https://github.com/SetaSensei/lazy-monster-builder/assets/8818232/91047fef-cc19-4080-87af-3599a9115c6e)
 
 ## Legal Notice
