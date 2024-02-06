@@ -1,0 +1,32 @@
+<div class="dialog-content">
+    <nav class="tabs" data-group="primary-tabs">
+        {{#each tabs}}
+            <a class="item" data-tab="{{id}}"><i class="{{icon}}"></i> {{title}}</a>
+        {{/each}}
+    </nav>
+
+    <div class="dialog-header">
+        {{{header}}}
+    </div>
+
+    <section class="tab-content">
+        {{#each tabs}}
+            <div class="tab" data-tab="{{id}}" data-group="primary-tabs">
+                {{{content}}}
+            </div>
+        {{/each}}
+    </section>
+
+    <div class="dialog-footer">
+        {{{footer}}}
+    </div>
+</div>
+
+<div class="dialog-buttons">
+    {{#each buttons as |button id|}}
+        <button class="dialog-button {{cssClass}}" data-button="{{id}}">
+            {{{button.icon}}}
+            {{{button.label}}}
+        </button>
+    {{/each}}
+</div>

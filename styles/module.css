@@ -1,0 +1,22 @@
+.lmb-stat {
+    margin: 0.2em;
+}
+
+.lmb-preview {
+    width: 80px; 
+    height: 80px;
+    margin: auto;
+}
+
+.lmb-warn {
+    color: red;
+    font-size: smaller;
+}
+
+.lmb-hidden {
+    visibility: collapse;
+}
+
+.lmb-dialog-tab {
+    height: 200px;
+}

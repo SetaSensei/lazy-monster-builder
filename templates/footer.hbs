@@ -1,0 +1,178 @@
+<div class="flexcol">
+    <header>
+        <h2>Future monster in a nutshell</h2>
+    </header>
+    <div class="flexrow">
+        <div class="flex1">
+            <img class="lmb-preview" id="token" src="{{options.path}}/tokens/aberration.png" />
+        </div>
+        <div class="flex2">
+            <div class="flexcol">
+                <div class="flexrow">
+                    <div class="lmb-stat" data-tooltip="HP" data-tooltip-direction="LEFT">
+                        <i class="fa-solid fa-heart"></i>&nbsp;<label id="hpLabel">{{options.stats.[0].HP}}</label>
+                    </div>
+                    <div class="lmb-stat" data-tooltip="Damage x Attacks" data-tooltip-direction="LEFT">
+                        <i class="fa-solid fa-swords"></i>&nbsp;<label id="dmgLabel">{{options.stats.[0].DpACalc}} x
+                            1</label>
+                    </div>
+                    <div class="lmb-stat" data-tooltip="AC" data-tooltip-direction="LEFT">
+                        <i class="fa-solid fa-shield"></i>&nbsp;<label id="acLabel">{{options.stats.[0].ACDC}}</label>
+                    </div>
+                </div>
+                <div class="flexrow">
+                    <div class="lmb-stat" data-tooltip="Str" data-tooltip-direction="LEFT">
+                        <i class="fa-solid fa-dumbbell"></i>&nbsp;<label id="strLabel">10</label>&nbsp;
+                        (<label id="strProf">+0</label>)
+                    </div>
+                    <div class="lmb-stat" data-tooltip="Dex" data-tooltip-direction="LEFT">
+                        <i class="fa-solid fa-bolt"></i>&nbsp;<label id="dexLabel">10</label>&nbsp;
+                        (<label id="dexProf">+0</label>)
+                    </div>
+                    <div data-tooltip="Con" data-tooltip-direction="LEFT">
+                        <i class="fa-solid fa-skeleton-ribs"></i>&nbsp;<label id="conLabel">10</label>&nbsp;
+                        (<label id="conProf">+0</label>)
+                    </div>
+                </div>
+                <div class="flexrow">
+                    <div class="lmb-stat" data-tooltip="Int" data-tooltip-direction="LEFT">
+                        <i class="fa-solid fa-lightbulb"></i>&nbsp;<label id="intLabel">10</label>&nbsp;
+                        (<label id="intProf">+0</label>)
+                    </div>
+                    <div class="lmb-stat" data-tooltip="Wis" data-tooltip-direction="LEFT">
+                        <i class="fa-solid fa-leaf"></i>&nbsp;<label id="wisLabel">10</label>&nbsp;
+                        (<label id="wisProf">+0</label>)
+                    </div>
+                    <div class="lmb-stat" data-tooltip="Cha" data-tooltip-direction="LEFT">
+                        <i class="fa-solid fa-mandolin"></i>&nbsp;<label id="chaLabel">10</label>&nbsp;
+                        (<label id="chaProf">+0</label>)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    function updateProf(ability) {
+        const profCheck = document.getElementById(ability + 'Bonus')
+        const label = document.getElementById(ability + 'Prof')
+
+        if (profCheck.checked === true) {
+
+            const source = document.getElementById('cr-value')
+            const prof = source.options[source.selectedIndex].getAttribute('data-pab');
+
+            label.innerText = prof
+        } else {
+            label.innerText = '+0'
+        }
+    }
+
+    document.getElementById('strBonus').addEventListener('change', function () {
+        updateProf('str')
+    })
+    document.getElementById('dexBonus').addEventListener('change', function () {
+        updateProf('dex')
+    })
+    document.getElementById('conBonus').addEventListener('change', function () {
+        updateProf('con')
+    })
+    document.getElementById('intBonus').addEventListener('change', function () {
+        updateProf('int')
+    })
+    document.getElementById('wisBonus').addEventListener('change', function () {
+        updateProf('wis')
+    })
+    document.getElementById('chaBonus').addEventListener('change', function () {
+        updateProf('cha')
+    })
+
+    document.getElementById('str').addEventListener('change', function () {
+        const label = document.getElementById('strLabel');
+        label.textContent = this.value;
+    })
+
+    document.getElementById('dex').addEventListener('change', function () {
+        const label = document.getElementById('dexLabel');
+        label.textContent = this.value;
+    })
+
+    document.getElementById('con').addEventListener('change', function () {
+        const label = document.getElementById('conLabel');
+        label.textContent = this.value;
+    })
+
+    document.getElementById('int').addEventListener('change', function () {
+        const label = document.getElementById('intLabel');
+        label.textContent = this.value;
+    })
+
+    document.getElementById('wis').addEventListener('change', function () {
+        const label = document.getElementById('wisLabel');
+        label.textContent = this.value;
+    })
+
+    document.getElementById('cha').addEventListener('change', function () {
+        const label = document.getElementById('chaLabel');
+        label.textContent = this.value;
+    })
+
+    document.getElementById('monster-type').addEventListener('change', function () {
+        const imgPath = "{{options.path}}/tokens/" + this.value.toLowerCase() + ".png"
+        token.src = imgPath
+    })
+
+    document.getElementById ('monster-stat-block').addEventListener('change', function() {
+        if (this.selectedIndex === 0) {
+            document.getElementById('cr-value').disabled = false
+
+            document.getElementById('strLabel').innerText = "10"
+            document.getElementById('dexLabel').innerText = "10"
+            document.getElementById('conLabel').innerText = "10"
+            document.getElementById('intLabel').innerText = "10"
+            document.getElementById('wisLabel').innerText = "10"
+            document.getElementById('chaLabel').innerText = "10"
+        } else {
+            document.getElementById('cr-value').disabled = true
+
+            document.getElementById('strLabel').innerText = this.options[this.selectedIndex].getAttribute('data-str')
+            document.getElementById('dexLabel').innerText = this.options[this.selectedIndex].getAttribute('data-dex')
+            document.getElementById('conLabel').innerText = this.options[this.selectedIndex].getAttribute('data-con')
+            document.getElementById('intLabel').innerText = this.options[this.selectedIndex].getAttribute('data-int')
+            document.getElementById('wisLabel').innerText = this.options[this.selectedIndex].getAttribute('data-wis')
+            document.getElementById('chaLabel').innerText = this.options[this.selectedIndex].getAttribute('data-cha')
+        }
+    })
+
+    document.getElementById('cr-value').addEventListener('change', function () {
+        const hpLabel = document.getElementById('hpLabel');
+        const dmgLabel = document.getElementById('dmgLabel');
+        const expLabel = document.getElementById('expLabel');
+        const acLabel = document.getElementById('acLabel');
+        const savesLabel = document.getElementById('saveBonus');
+
+        const selectedOption = this.options[this.selectedIndex];
+
+        const hpValue = selectedOption.getAttribute('data-hp');
+        const noaValue = selectedOption.getAttribute('data-noa');
+        const dmgValue = selectedOption.getAttribute('data-dmg');
+        const expValue = selectedOption.getAttribute('data-exp');
+        const acValue = selectedOption.getAttribute('data-ac');
+        const savesValue = selectedOption.getAttribute('data-pab');
+
+        hpLabel.textContent = hpValue;
+        dmgLabel.textContent = dmgValue + " x " + noaValue;
+        expLabel.textContent = "Example: " + expValue;
+        acLabel.textContent = acValue;
+        savesLabel.textContent = savesValue;
+        updateProf('str')
+        updateProf('dex')
+        updateProf('con')
+        updateProf('int')
+        updateProf('wis')
+        updateProf('cha')
+
+    });
+</script>
