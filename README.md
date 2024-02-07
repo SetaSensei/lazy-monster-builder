@@ -11,6 +11,13 @@ This work is licensed under a
 
 # Lazy Monster Builder
 
+## Where to find it
+
+In the *Actors* section on the right panel, you should see a "Generate Monster" button
+
+
+![image](https://github.com/SetaSensei/lazy-monster-builder/assets/8818232/91047fef-cc19-4080-87af-3599a9115c6e)
+
 ## Legal Notice
 
 This work includes material taken from the [Lazy GM's 5e Monster Builder Resource Document](https://slyflourish.com/lazy_5e_monster_building_resource_document.html) written by Teos Abadía of [Alphastream.org](https://alphastream.org/), Scott Fitzgerald Gray of [Insaneangel.com](https://insaneangel.com/), and Michael E. Shea of [SlyFlourish.com](https://slyflourish.com/), available under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
