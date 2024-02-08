@@ -5,6 +5,9 @@ const LOCAL_CONFIG = {
     environment: "prod"
 }
 
+export function getAbilityModifier(abilityScore) {
+    return Math.floor( (abilityScore - 10) / 2 )
+}
 
 export function getFolderPath() {
     return 'modules/lazy-monster-builder/'

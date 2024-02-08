@@ -1,8 +1,10 @@
 export default class TabbedDialog extends Dialog {
     constructor(data, options = {}) {
       // setting up tabs here instead of in defaultOptions so that we can easily set the initial tab
-      options.tabs = [{navSelector: ".tabs", contentSelector: ".tab-content", initial: options.initial_tab || "tab1"}];
+      options.tabs = [{navSelector: ".tabs", contentSelector: ".tab-content", initial: options.initial_tab || "tab1" }];
       super(data, options)
+
+      this.tabChangeCallback = options.tabChangeCallback;
     }
   
     static get defaultOptions() {
@@ -10,9 +12,23 @@ export default class TabbedDialog extends Dialog {
         template: `modules/lazy-monster-builder/templates/tab_template.hbs`,
       });
     }
+
+    activateListeners(html) {
+      super.activateListeners(html);
+    
+      if (this.tabChangeCallback) {
+        html.find(".tabs a").click(ev => {
+          const activeTabId = ev.currentTarget.dataset.tab;
+          this.tabChangeCallback(activeTabId, html);
+        });
+      }
+    
+      this._tabs[0].bind(html[0]);
+    }
+    
   
     getData() {
-      console.log("getData", this);
+      // console.log("getData", this);
       // no super to Application
       const data = super.getData();
   
@@ -27,8 +43,6 @@ export default class TabbedDialog extends Dialog {
   
       data.header = this.data.header;
       data.footer = this.data.footer;
-  
-      console.log(data);
   
       return data;
     }

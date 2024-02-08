@@ -1,0 +1,12 @@
+<div class="flexcol lmb-dialog-container">
+    <h1 class="flex0">Lazy Monster Creator</h1>
+    <div class="flex0">
+        <div class="flexrow">
+            <select id="monster-type" name="monsterType">
+                {{#each options.type}}
+                    <option value="{{this.name}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+</div>

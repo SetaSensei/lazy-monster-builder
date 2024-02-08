@@ -18,5 +18,13 @@
 }
 
 .lmb-dialog-tab {
-    height: 200px;
+    height: 180px;
+}
+
+.lmb-dialog-container {
+    margin-top: 1em;
+}
+
+.lmb-vertical {
+    align-items: center;
 }

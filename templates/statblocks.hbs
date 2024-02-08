@@ -1,0 +1,19 @@
+<div class="flexcol lmb-dialog-tab lmb-dialog-container">
+    <div class="flex0">
+        <header>
+            <h2>Stat Block</h2>
+        </header>
+    </div>
+    <div class="flex0">
+        <div class="flexrow">
+            <select id="monster-stat-block" name="statBlock">
+                {{#each options.statBlocks}}
+                    <option value="{{this.name}}" data-infos="{{this.serialized}}">CR: {{this.CR}} - {{this.name}}</option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+    <div class="flex3 lmb-dialog-container">
+        <span id="monster-desc">The low-CR minions represented by this stat block might include ravenous rats, weak skeletons, shifty bandits, or low-ranking cultists. A minion can serve as a one-on-one combatant against 1st-level characters, or can be deployed in large groups at 4th level or above. This stat block focuses on Dexterity as its primary ability.</span>
+    </div>
+</div>
