@@ -655,8 +655,15 @@ const MONSTERS_FEATURES = [
 const MONSTERS_ARCHETYPES = [
   {
     name: "Minion",
-    stock: "4",
-    cr: "1/8",
+    stock: 4,
+    CR: "1/8",
+    HP: 9,
+    ACDC: 11,
+    NoA: 1,
+    DpACalc: "1d6+1",
+    atkBonus: 3,
+    speed: 30,
+    PAB: 2,
     abilities: {
       str: { value: 10, proficient: 0 },
       dex: { value: 12, proficient: 0 },
@@ -664,12 +671,20 @@ const MONSTERS_ARCHETYPES = [
       int: { value: 10, proficient: 0 },
       wis: { value: 12, proficient: 0 },
       cha: { value: 10, proficient: 0 },
-    }
+    },
+    desc: 'The low-CR minions represented by this stat block might include ravenous rats, weak skeletons, shifty bandits, or low-ranking cultists. A minion can serve as a one-on-one combatant against 1st-level characters, or can be deployed in large groups at 4th level or above. This stat block focuses on Dexterity as its primary ability.'
   },
   {
     name: "Soldier",
-    stock: "6",
-    cr: "1/2",
+    stock: 6,
+    CR: "1/2",
+    HP: 22,
+    ACDC: 12,
+    NoA: 1,
+    DpACalc: "1d12+2",
+    atkBonus: 4,
+    speed: 30,
+    PAB: 2,
     abilities: {
       str: { value: 14, proficient: 0 },
       dex: { value: 12, proficient: 0 },
@@ -677,41 +692,130 @@ const MONSTERS_ARCHETYPES = [
       int: { value: 10, proficient: 0 },
       wis: { value: 10, proficient: 0 },
       cha: { value: 10, proficient: 0 },
-    }
+    },
+    desc: "Representing seasoned guards, trained soldiers, powerful bandits, murderous humanoids, or armed undead, the soldier stat block works well as a boss at 1st level, an elite foe for two 2nd-level characters, or one-on-one combatants at 4th level, or in large groups at 6th level and above. Strength is this stat block's primary ability."
   },
   {
     name: "Brute",
-    stock: "10",
-    cr: "2",
+    stock: 10,
+    CR: "2",
+    HP: 45,
+    ACDC: 13,
+    NoA: 2,
+    DpACalc: "1d12+3",
+    atkBonus: 5,
+    speed: 30,
+    PAB: 2,
     abilities: {
       str: { value: 16, proficient: 0 },
       dex: { value: 12, proficient: 0 },
-      con: { value: 14, proficient: 0 },
+      con: { value: 14, proficient: 1 },
       int: { value: 10, proficient: 0 },
       wis: { value: 10, proficient: 0 },
       cha: { value: 8, proficient: 0 },
     },
     skills: {
-      ath: 5
-    }
+      ath: { value: 1 }
+    },
+    desc: "Heavy-hitting veterans, capable bodyguards, low-ranking demons or devils, dangerous monsters in the wild, and powerful humanoids can all be represented by this stat block. A brute can serve as a boss against 2nd-level characters, an elite foe against two 4th-level characters, or a one-on-one opponent at 5th level, or in large groups at 10th level. This stat block relies on Strength."
   },
   {
     name: "Specialist",
-    stock: "20",
-    cr: "4",
+    stock: 20,
+    CR: "4",
+    HP: 84,
+    ACDC: 14,
+    NoA: 2,
+    DpACalc: "3d6+4",
+    atkBonus: 6,
+    speed: 30,
+    PAB: 2,
     abilities: {
       str: { value: 12, proficient: 0 },
-      dex: { value: 18, proficient: 0 },
-      con: { value: 14, proficient: 1 },
+      dex: { value: 18, proficient: 1 },
+      con: { value: 14, proficient: 0 },
       int: { value: 10, proficient: 0 },
-      wis: { value: 14, proficient: 0 },
+      wis: { value: 14, proficient: 1 },
       cha: { value: 12, proficient: 0 },
     },
     skills: {
-      acr: 6,
-      prc: 4,
-      ste: 6
-    }
+      acr: { value: 1 },
+      prc: { value: 1 },
+      ste: { value: 1 }
+    },
+    desc: "This stat block can represent spies, assassins, hunters, and trained elite forces. The specialist serves as a boss for 4th-level characters, an elite opponent versus two 5th-level characters, or a one-on-one combatant for 10th-level characters, or in large groups against 16th-level characters. Dexterity is this stat block's primary ability."
+  },
+  {
+    name: "Myrmidon",
+    stock: 20,
+    CR: "7",
+    HP: 130,
+    ACDC: 15,
+    NoA: 3,
+    DpACalc: "3d8+4",
+    atkBonus: 7,
+    speed: 30,
+    PAB: 3,
+    abilities: {
+      str: { value: 10, proficient: 0 },
+      dex: { value: 14, proficient: 1 },
+      con: { value: 14, proficient: 0 },
+      int: { value: 18, proficient: 0 },
+      wis: { value: 14, proficient: 1 },
+      cha: { value: 10, proficient: 0 },
+    },
+    skills: {
+      prc: { value: 1 }
+    },
+    desc: "Powerful elite bodyguards, high priests, wizards, warlocks, sorcerers, demons, and devils can all be represented by this stat block. A myrmidon can serve as a boss monster for 5th-level characters, an elite combatant against two characters of 7th level, or a one-on-one combatant against 14th-level characters, or in large groups against 20th-level characters. This stat block focuses on Intelligence."
+  },
+  {
+    name: "Sentinel",
+    stock: 20,
+    CR: "11",
+    HP: 165,
+    ACDC: 17,
+    NoA: 4,
+    DpACalc: "3d8+5",
+    atkBonus: 9,
+    speed: 30,
+    PAB: 4,
+    abilities: {
+      str: { value: 10, proficient: 0 },
+      dex: { value: 14, proficient: 1 },
+      con: { value: 14, proficient: 0 },
+      int: { value: 18, proficient: 0 },
+      wis: { value: 14, proficient: 1 },
+      cha: { value: 10, proficient: 0 },
+    },
+    skills: {
+      prc: { value: 1 }
+    },
+    desc: "This stat block is a good fit for strong, often-otherworldly creatures such as demons, devils, impressive beings of the Outer Planes, guardian constructs, or powerful undead. The sentinel can serve as a boss for 7th-level characters, an elite foe against two 12th-level characters, or can stand one-on-one against 16th-level characters. This stat block focuses on Strength."
+  },
+  {
+    name: "Champion",
+    stock: 20,
+    CR: "15",
+    HP: 212,
+    ACDC: 19,
+    NoA: 4,
+    DpACalc: "4d8+6",
+    atkBonus: 9,
+    speed: 30,
+    PAB: 5,
+    abilities: {
+      str: { value: 10, proficient: 0 },
+      dex: { value: 12, proficient: 0 },
+      con: { value: 18, proficient: 0 },
+      int: { value: 12, proficient: 0 },
+      wis: { value: 16, proficient: 1 },
+      cha: { value: 22, proficient: 1 },
+    },
+    skills: {
+      prc: { value: 1 }
+    },
+    desc: "Representing greater demons, devils, vampires, liches, or powerful spellcasters, the champion serves as a boss for 11th-level characters, an elite foe for two 15th-level characters, or a one-on-one challenge against 17th-level characters. This stat block focuses on Charisma."
   }
 ]
 
