@@ -1,10 +1,12 @@
 .lmb-stat {
-    margin: 0.2em;
+    margin: 0.3em;
+    display: flex;
+    align-items: center;
 }
 
 .lmb-preview {
-    width: 80px; 
-    height: 80px;
+    width: 8em; 
+    height: 8em;
     margin: auto;
 }
 
@@ -18,7 +20,7 @@
 }
 
 .lmb-dialog-tab {
-    height: 180px;
+    height: 200px;
 }
 
 .lmb-dialog-container {
@@ -28,3 +30,28 @@
 .lmb-vertical {
     align-items: center;
 }
+
+.lmb-footer {
+    margin-bottom: 1em;
+}
+
+.lmb-center {
+    align-content: center;
+    background-color: blue;
+}
+
+.lmb-label {
+    text-align: left;
+}
+
+.lmb-label-wrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
+  .lmb-description {
+    width: 100%;
+    height: 100%;
+  }
