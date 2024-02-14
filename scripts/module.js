@@ -29,7 +29,7 @@ async function showMonsterForm(event) {
     const template = Handlebars.compile(hbs);
     const options = {
         stats: MONSTERS_STATS.map(entry => ({ ...entry, serialized: JSON.stringify(entry) })), type: MONSTERS_TYPE, path: getFolderPath(),
-        statProf: { str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0 }, features: MONSTERS_FEATURES,
+        statProf: { str: 0, dex: 0, con: 0, int: 0, wis: 0, cha: 0 }, features: MONSTERS_FEATURES.map(entry => ({ ...entry, serialized: JSON.stringify(entry) })),
         statBlocks: MONSTERS_ARCHETYPES.map(entry => ({ ...entry, serialized: JSON.stringify(entry) }))
     }
     const html = template({ options })
@@ -54,19 +54,11 @@ async function showMonsterForm(event) {
     const templateTabAdv = Handlebars.compile(hbsTabAdv);
     const htmlTabAdv = templateTabAdv({ options })
 
-    const updateDom = function (activeTabId, html) {
-        var activeData = {}
-
-        if (activeTabId === "tab1") {
-            const selectedOption = html.find('#cr-value').find('option:selected')
-            activeData = selectedOption.data('infos')
-        } else if (activeTabId === "tab2") {
-            const selectedOption = html.find('#monster-stat-block').find('option:selected')
-            activeData = selectedOption.data('infos')
-        }
+    const updateDom = async function (html) {
+        var activeData = JSON.parse(html.find('#selectedMonsterStats').val())
 
         if (activeData === undefined) {
-            vttError(`Unknown tab (${activeTabId}) - cannot update stats`, true)
+            vttError(`Stats empty cannot update `, true)
         }
 
         const abilities = ['str', 'dex', 'con', 'int', 'wis', 'cha']
@@ -75,7 +67,7 @@ async function showMonsterForm(event) {
         html.find('#hpLabel').text(activeData.HP)
         html.find('#dmgLabel').text(`${activeData.DpACalc} x ${activeData.NoA}`)
         html.find('#acLabel').text(activeData.ACDC)
-        html.find('#saveBonus').text(activeData.PAB)
+        html.find('#profLabel').text(activeData.PAB)
 
         if (activeData.abilities) {
             html.find('#strLabel').text(activeData.abilities.str.value)
@@ -84,6 +76,8 @@ async function showMonsterForm(event) {
             html.find('#intLabel').text(activeData.abilities.int.value)
             html.find('#wisLabel').text(activeData.abilities.wis.value)
             html.find('#chaLabel').text(activeData.abilities.cha.value)
+
+            html.find('#lvlLabel').parent().hide()
 
             abilities.forEach(a => {
                 const ability = activeData.abilities[a]
@@ -99,6 +93,10 @@ async function showMonsterForm(event) {
             html.find('#wisLabel').text(10)
             html.find('#chaLabel').text(10)
 
+            html.find('#saveBonus').text(activeData.PAB)
+            html.find('#lvlLabel').parent().show()
+            html.find('#lvlLabel').text(activeData.ECL)
+
             abilities.forEach(a => {
                 if (html.find('#' + a + 'Bonus')[0].checked) {
                     saveProfs.push(capitalizeFirstLetter(a) + ' ' + parseInt(activeData.PAB))
@@ -108,7 +106,21 @@ async function showMonsterForm(event) {
         html.find('#stLabel').text(saveProfs.join(', '))
         html.find('#monster-desc').text(activeData.desc || '')
 
-        html.find('#selectedMonsterStats').val(JSON.stringify(activeData))
+        const actualFeatures = html.find('#selectedMonsterStats').data('features')
+
+        const hbsFeature = await fetch(`${getFolderPath()}/templates/features.hbs`).then(response => response.text());
+        const templateFeature = Handlebars.compile(hbsFeature);
+        const htmlFeature = templateFeature({ features: actualFeatures })
+        html.find('#lmb-feature-content').html(htmlFeature)
+
+        html.find(".lmb-delete-entry").click(evt => {
+
+            var actualFeatures = html.find('#selectedMonsterStats').data('features')
+            actualFeatures.splice(evt.currentTarget.dataset.idx, 1)
+            html.find('#selectedMonsterStats').data('features', actualFeatures)
+
+            updateDom(html)
+        });
     }
 
 
@@ -137,23 +149,38 @@ async function showMonsterForm(event) {
             },
             default: "two",
             render: html => {
-                const currentTab = function () {
-                    return html.find('.tabs').find('.item.active').data('tab')
-                }
-
                 html.find('#cr-value').change(function () {
-                    updateDom(currentTab(), html)
+                    const selectedOption = html.find('#cr-value').find('option:selected')
+                    const activeData = selectedOption.data('infos')
+                    html.find('#selectedMonsterStats').val(JSON.stringify(activeData))
+
+                    updateDom(html)
                 });
+
                 html.find('.lmb-save').change(function () {
-                    updateDom(currentTab(), html)
-                })
+                    updateDom(html)
+                });
+
                 html.find('#monster-stat-block').change(function () {
-                    updateDom(currentTab(), html)
-                })
+                    const selectedOption = html.find('#monster-stat-block').find('option:selected')
+                    const activeData = selectedOption.data('infos')
+                    html.find('#selectedMonsterStats').val(JSON.stringify(activeData))
+
+                    updateDom(html)
+                });
 
                 html.find('#monster-type').change(function () {
                     const imgPath = `${getFolderPath()}/tokens/${$(this).val().toLowerCase()}.png`
                     html.find('#token').attr('src', imgPath)
+                });
+
+                html.find('#add-feature').click(async function () {
+                    const feature = html.find('#monster-feature').find('option:selected').data('infos')
+                    var actualFeatures = html.find('#selectedMonsterStats').data('features')
+                    actualFeatures.push(feature)
+                    html.find('#selectedMonsterStats').data('features', actualFeatures)
+
+                    updateDom(html)
                 })
             },
             close: html => console.log("This always is logged no matter which option is chosen")
@@ -161,8 +188,18 @@ async function showMonsterForm(event) {
 
         },
         {
+            width: 560,
             resizable: false, initial_tab: "tab1", tabChangeCallback: function (activeTabId, html) {
-                updateDom(activeTabId, html)
+                if (activeTabId === "tab1") {
+                    const selectedOption = html.find('#cr-value').find('option:selected')
+                    const activeData = selectedOption.data('infos')
+                    html.find('#selectedMonsterStats').val(JSON.stringify(activeData))
+                } else {
+                    const selectedOption = html.find('#monster-stat-block').find('option:selected')
+                    const activeData = selectedOption.data('infos')
+                    html.find('#selectedMonsterStats').val(JSON.stringify(activeData))
+                }
+                updateDom(html)
             }
         }
 
@@ -173,25 +210,73 @@ async function showMonsterForm(event) {
 
 async function createActor(context) {
     const stats = JSON.parse(context.find('#selectedMonsterStats').val())
+    const features = context.find('#selectedMonsterStats').data('features')
 
     const type = MONSTERS_TYPE[context.find('#monster-type')[0].selectedIndex]
 
     vttLog(`Creating monster ${type.name} CR ${stats.CR}`, true)
 
+    var noa = stats.NoA
 
+    var featTab = []
+    for (let index = 0; index < features.length; index++) {
+
+        const f = features[index];
+
+        if (f.reduceAtk === true && (noa === stats.NoA)) {
+            noa--
+        }
+
+        const key = f.isDmg ? 'system.bonuses.mwak.damage' : ''
+        const item = f.item
+
+        if (f.isEffect) {
+            item.effects[0].changes = [
+                {
+                    key: "system.bonuses.mwak.damage",
+                    mode: 2,
+                    value: stats.DpACalc
+                },
+                {
+                    key: "system.bonuses.rwak.damage",
+                    mode: 2,
+                    value: stats.DpACalc
+                },
+                {
+                    key: "system.bonuses.rsak.damage",
+                    mode: 2,
+                    value: stats.DpACalc
+                },
+                {
+                    key: "system.bonuses.msak.damage",
+                    mode: 2,
+                    value: stats.DpACalc
+                }
+            ]
+        }
+        if (f.isDmg) {
+            item.system.attackBonus = stats.atkBonus || stats.PAB,
+                item.system.damage = {
+                    parts: [
+                        [
+                            f.divideDmg ? `floor((${stats.DpACalc})/${f.divideDmg})` : stats.DpACalc
+                        ]
+                    ]
+                }
+        }
+        featTab.push(item)
+    }
 
     let attacks = {
-        name: `${stats.NoA} attack(s)`,
+        name: `${noa} attack(s)`,
         img: "icons/skills/melee/maneuver-greatsword-yellow.webp",
         type: "feat",
         system: {
             description: {
-                value: `<p>The creature can perform ${stats.NoA} attack(s) per turn.</p>`
+                value: `<p>The creature can perform ${noa} attack(s) per turn.</p>`
             }
         }
     }
-
-
 
     const name = `${stats.name || ''} ${type.name} - (CR ${stats.CR})`
     const token = `${getFolderPath()}/tokens/${type.name.toLowerCase()}.png`
@@ -288,7 +373,10 @@ async function createActor(context) {
         actor.createEmbeddedDocuments('Item', [melee]);
     }
 
+
+
     actor.createEmbeddedDocuments('Item', [attacks]);
+    actor.createEmbeddedDocuments('Item', featTab);
 
     vttLog(`Monster created, have fun !`, true)
 }

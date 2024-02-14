@@ -1,29 +1,25 @@
-<div class="flexcol lmb-dialog-tab lmb-dialog-container">
-    <div class="flex0">
-        <header>
-            <h2>Challenge Rating</h2>
-        </header>
-    </div>
-    <div class="flex0" id="lmb-fullcr">
-        <div class="flexrow">
-            <select id="cr-value" name="crValue">
-                {{#each options.stats}}
-                    <option value="{{this.CR}}" data-infos="{{this.serialized}}" data-pab="{{this.PAB}}"
-                        data-noa="{{this.NoA}}" data-hp="{{this.HP}}" data-dmg="{{this.DpACalc}}"
-                        data-ac="{{this.ACDC}}" data-exp="{{this.example}}">CR: {{this.CR}}
-                        ({{this.example}})
-                    </option>
-                {{/each}}
-            </select>
+<div class="flexrow lmb-dialog-tab lmb-dialog-container">
+    <div class="flexcol flex2 lmb-left-col">
+        <div class="flex0">
+            <header>
+                <h2>Challenge Rating</h2>
+            </header>
         </div>
-    </div>
-    <div class="flex0 lmb-dialog-container">
-        <header>
-            <h3>Bonus on Saves (<label id="saveBonus">+2</label>)</h3>
-        </header>
-    </div>
-    <div class="flex0">
-        <div class="flexrow">
+        <div class="flex0" id="lmb-fullcr">
+            <div class="flexrow">
+                <select id="cr-value" name="crValue">
+                    {{#each options.stats}}
+                        <option data-infos="{{this.serialized}}">CR: {{this.CR}} ({{this.example_trunc}})</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+        <div class="flexrow flex0 lmb-dialog-container">
+            <header>
+                <h3>Bonus on Saves (<label id="saveBonus">+2</label>)</h3>
+            </header>
+        </div>
+        <div class="flexrow flex1">
             <div class="flex1">
                 <div class="flexcol lmb-vertical">
                     <label>
@@ -73,5 +69,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="flexcol flex2 lmb-right-col">
+        &nbsp;
     </div>
 </div>

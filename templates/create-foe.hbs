@@ -1,112 +1,117 @@
-<form class="flexcol" autocomplete="off">
-  <div class="flex0">
-    <div class="flexcol">
-      <header>
-        <h2>Select CR and monster type</h2>
-      </header>
-      <div class="flexrow">
-        <select id="cr-value" name="crValue">
-          {{#each options.stats}}
-            <option value="{{this.CR}}" data-pab="{{this.PAB}}" data-noa="{{this.NoA}}" data-hp="{{this.HP}}"
-              data-dmg="{{this.DpACalc}}" data-ac="{{this.ACDC}}" data-exp="{{this.example}}">CR: {{this.CR}}
-              ({{this.example}})
-            </option>
-          {{/each}}
-        </select>
-      </div>
-      <div class="flexrow">
-        <label for="monster-type">Foe Type :</label>
-        <select id="monster-type" name="monsterType">
-          {{#each options.type}}
-            <option value="{{this.name}}">{{this.name}}</option>
-          {{/each}}
-        </select>
+<div class="flexrow">
+  <div class="flexcol flex2">
+    <div class="flex0">
+      <div class="flexcol">
+        <header>
+          <h2>Select CR and monster type</h2>
+        </header>
+        <div class="flexrow">
+          <select id="cr-value" name="crValue">
+            {{#each options.stats}}
+              <option value="{{this.CR}}" data-pab="{{this.PAB}}" data-noa="{{this.NoA}}" data-hp="{{this.HP}}"
+                data-dmg="{{this.DpACalc}}" data-ac="{{this.ACDC}}" data-exp="{{this.example}}">CR: {{this.CR}}
+                ({{this.example_trunc}})
+              </option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="flexrow">
+          <label for="monster-type">Foe Type :</label>
+          <select id="monster-type" name="monsterType">
+            {{#each options.type}}
+              <option value="{{this.name}}">{{this.name}}</option>
+            {{/each}}
+          </select>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="flex0">
+    <div class="flex0">
 
-    <div class="flexcol">
-      <header>
-        <h2>Advanced options</h2> <span class="lmb-warn">Editing abilities
-          after creation may lead to unexpected results</span>
-      </header>
-      <header class="lmb-hidden">
-        <h3>Ability scores</h3>
-      </header>
-      <div class="flexrow lmb-hidden">
-        <div class="flex1">
-          <label for="str">Str</label>
-          <input class="ability" type="number" id="str" name="str" min="1" max="24" value="10">
+      <div class="flexcol">
+        <header>
+          <h2>Advanced options</h2> <span class="lmb-warn">Editing abilities
+            after creation may lead to unexpected results</span>
+        </header>
+        <header class="lmb-hidden">
+          <h3>Ability scores</h3>
+        </header>
+        <div class="flexrow lmb-hidden">
+          <div class="flex1">
+            <label for="str">Str</label>
+            <input class="ability" type="number" id="str" name="str" min="1" max="24" value="10">
+          </div>
+          <div class="flex1">
+            <label for="dex">Dex</label>
+            <input class="ability" type="number" id="dex" name="dex" min="1" max="24" value="10">
+          </div>
+          <div class="flex1">
+            <label for="con">Con</label>
+            <input class="ability" type="number" id="con" name="con" min="1" max="24" value="10">
+          </div>
+          <div class="flex1">
+            <label for="int">Int</label>
+            <input class="ability" type="number" id="int" name="int" min="1" max="24" value="10">
+          </div>
+          <div class="flex1">
+            <label for="wis">Wis</label>
+            <input class="ability" type="number" id="wis" name="wis" min="1" max="24" value="10">
+          </div>
+          <div class="flex1">
+            <label for="wis">cha</label>
+            <input class="ability" type="number" id="cha" name="cha" min="1" max="24" value="10">
+          </div>
         </div>
-        <div class="flex1">
-          <label for="dex">Dex</label>
-          <input class="ability" type="number" id="dex" name="dex" min="1" max="24" value="10">
+        <header>
+          <h3>Bonus (<label id="saveBonus">+2</label>)</h3>
+        </header>
+        <div class="flexrow">
+          <label>
+            <input type="checkbox" id="strBonus">
+            Str
+          </label>
+          <label>
+            <input type="checkbox" id="dexBonus">
+            Dex
+          </label>
+          <label>
+            <input type="checkbox" id="conBonus">
+            Con
+          </label>
+          <label>
+            <input type="checkbox" id="intBonus">
+            Int
+          </label>
+          <label>
+            <input type="checkbox" id="wisBonus">
+            Wis
+          </label>
+          <label>
+            <input type="checkbox" id="chaBonus">
+            Cha
+          </label>
         </div>
-        <div class="flex1">
-          <label for="con">Con</label>
-          <input class="ability" type="number" id="con" name="con" min="1" max="24" value="10">
+        <header>
+          <h3>Features</h3>
+        </header>
+        <div class="flexrow">
+          <label for="feature-value">Feature :</label>
+          <select id="feature-value" name="featureValue">
+            <option value="none">none</option>
+            {{#each options.features}}
+              <option value="{{this.name}}">{{this.name}}</option>
+            {{/each}}
+          </select>
         </div>
-        <div class="flex1">
-          <label for="int">Int</label>
-          <input class="ability" type="number" id="int" name="int" min="1" max="24" value="10">
+        <div class="form-group">
+          <label id="expLabel">Example: {{options.stats.[0].example}}</label>
         </div>
-        <div class="flex1">
-          <label for="wis">Wis</label>
-          <input class="ability" type="number" id="wis" name="wis" min="1" max="24" value="10">
-        </div>
-        <div class="flex1">
-          <label for="wis">cha</label>
-          <input class="ability" type="number" id="cha" name="cha" min="1" max="24" value="10">
-        </div>
-      </div>
-      <header>
-        <h3>Bonus (<label id="saveBonus">+2</label>)</h3>
-      </header>
-      <div class="flexrow">
-        <label>
-          <input type="checkbox" id="strBonus">
-          Str
-        </label>
-        <label>
-          <input type="checkbox" id="dexBonus">
-          Dex
-        </label>
-        <label>
-          <input type="checkbox" id="conBonus">
-          Con
-        </label>
-        <label>
-          <input type="checkbox" id="intBonus">
-          Int
-        </label>
-        <label>
-          <input type="checkbox" id="wisBonus">
-          Wis
-        </label>
-        <label>
-          <input type="checkbox" id="chaBonus">
-          Cha
-        </label>
-      </div>
-      <header>
-        <h3>Features</h3>
-      </header>
-      <div class="flexrow">
-        <label for="feature-value">Feature :</label>
-        <select id="feature-value" name="featureValue">
-          <option value="none">none</option>
-          {{#each options.features}}
-            <option value="{{this.name}}">{{this.name}}</option>
-          {{/each}}
-        </select>
-      </div>
-      <div class="form-group">
-        <label id="expLabel">Example: {{options.stats.[0].example}}</label>
       </div>
     </div>
   </div>
-</form>
+  <div class="flexcol flex2">
+    test
+  </div>
+</div>
 <script>
   function updateProf(ability) {
     console.log(ability)

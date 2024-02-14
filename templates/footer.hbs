@@ -1,55 +1,23 @@
-<div class="flexcol lmb-footer">
-    <header>
-        <h2>Future monster in a nutshell</h2>
-    </header>
-    <div class="flexrow">
+<div class="flexrow lmb-footer">
+    <div class="flexcol flex2 lmb-left-col">
+        <h2 class="flex0">Monster's features</h2>
         <div class="flex1">
-            <img class="lmb-preview" id="token" src="{{options.path}}/tokens/aberration.png" />
-            <input type="hidden" id="selectedMonsterStats" value="{{options.stats.[0].serialized}}" />
-        </div>
-        <div class="flex2">
-            <div class="flexcol">
+            <div class="flexcol flex3">
                 <div class="flexrow">
-                    <div class="lmb-stat flex1" data-tooltip="HP" data-tooltip-direction="LEFT">
-                        <i class="fa-solid fa-heart"></i>&nbsp;<label id="hpLabel">{{options.stats.[0].HP}}</label>
-                    </div>
-                    <div class="lmb-stat flex1" data-tooltip="Damage x Attacks" data-tooltip-direction="LEFT">
-                        <i class="fa-solid fa-swords"></i>&nbsp;<label class="lmb-label-wrap" id="dmgLabel">{{options.stats.[0].DpACalc}} x
-                            1</label>
-                    </div>
-                    <div class="lmb-stat flex1" data-tooltip="AC" data-tooltip-direction="LEFT">
-                        <i class="fa-solid fa-shield"></i>&nbsp;<label id="acLabel">{{options.stats.[0].ACDC}}</label>
-                    </div>
+                    <select class="flex1" id="monster-feature" name="monsterType">
+                        {{#each options.features}}
+                            <option data-infos="{{this.serialized}}">{{this.name}}</option>
+                        {{/each}}
+                    </select>
                 </div>
                 <div class="flexrow">
-                    <div class="lmb-stat" data-tooltip="Str" data-tooltip-direction="LEFT">
-                        <i class="fa-solid fa-dumbbell"></i>&nbsp;<label id="strLabel">10</label>
-                    </div>
-                    <div class="lmb-stat" data-tooltip="Dex" data-tooltip-direction="LEFT">
-                        <i class="fa-solid fa-bolt"></i>&nbsp;<label id="dexLabel">10</label>
-                    </div>
-                    <div class="lmb-stat" data-tooltip="Con" data-tooltip-direction="LEFT">
-                        <i class="fa-solid fa-skeleton-ribs"></i>&nbsp;<label id="conLabel">10</label>
-                    </div>
-                </div>
-                <div class="flexrow">
-                    <div class="lmb-stat" data-tooltip="Int" data-tooltip-direction="LEFT">
-                        <i class="fa-solid fa-lightbulb"></i>&nbsp;<label id="intLabel">10</label>
-                    </div>
-                    <div class="lmb-stat" data-tooltip="Wis" data-tooltip-direction="LEFT">
-                        <i class="fa-solid fa-leaf"></i>&nbsp;<label id="wisLabel">10</label>
-                    </div>
-                    <div class="lmb-stat" data-tooltip="Cha" data-tooltip-direction="LEFT">
-                        <i class="fa-solid fa-mandolin"></i>&nbsp;<label id="chaLabel">10</label>
-                    </div>
-                </div>
-                <div class="flexrow">
-                    <div class="lmb-stat" data-tooltip="Saving Throws" data-tooltip-direction="LEFT">
-                        <i class="fa-solid fa-shield-heart"></i></i>&nbsp;<label id="stLabel"></label>
-                    </div>
+                    <button id="add-feature" class="lmb-button"><i class="fa-solid fa-circle-plus"></i> Add Feature</button>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="flexcol flex2">
+        &nbsp;
     </div>
 </div>
 
