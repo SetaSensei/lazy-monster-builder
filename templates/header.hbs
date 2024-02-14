@@ -1,12 +1,99 @@
 <div class="flexcol lmb-dialog-container">
-    <h1 class="flex0">Lazy Monster Creator</h1>
-    <div class="flex0">
-        <div class="flexrow">
-            <select id="monster-type" name="monsterType">
-                {{#each options.type}}
-                    <option value="{{this.name}}">{{this.name}}</option>
-                {{/each}}
-            </select>
+    <h1>Lazy Monster Creator</h1>
+    <div class="flexrow lmb-left-col">
+        <div class="flexcol">
+            <h2 class="flex0">Monster's Type</h2>
+            <div class="flex0">
+                <div class="flexrow">
+                    <select id="monster-type" name="monsterType">
+                        {{#each options.type}}
+                            <option value="{{this.name}}">{{this.name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="flexcol lmb-right-col" style="overflow: visible">
+            <div style="position: absolute;">
+                <header>
+                    <h2>Future monster in a nutshell</h2>
+                </header>
+                <div class="flexcol">
+                    <div class="flexrow">
+                        <div class="flex1">
+                            <img class="lmb-preview" id="token" src="{{options.path}}/tokens/aberration.png" />
+                            <input type="hidden" id="selectedMonsterStats" value="{{options.stats.[0].serialized}}" data-features="[]"/>
+                        </div>
+                        <div class="flexcol flex1" style="max-width: 100%;">
+                            <div class="flexrow">
+                                <div class="lmb-stat flex1" data-tooltip="HP" data-tooltip-direction="LEFT">
+                                    <i class="fa-solid fa-heart"></i>&nbsp;<label
+                                        id="hpLabel">{{options.stats.[0].HP}}</label>
+                                </div>
+                                <div class="lmb-stat flex1" data-tooltip="AC" data-tooltip-direction="LEFT">
+                                    <i class="fa-solid fa-shield"></i>&nbsp;<label
+                                        id="acLabel">{{options.stats.[0].ACDC}}</label>
+                                </div>
+                            </div>
+                            <div class="flexrow">
+                                <div class="lmb-stat flex1" data-tooltip="Prof" data-tooltip-direction="LEFT">
+                                    <i class="fa-solid fa-up"></i>&nbsp;<label class="lmb-label-wrap"
+                                        id="profLabel">{{options.stats.[0].PAB}}</label>
+                                </div>
+                                <div class="lmb-stat flex1" data-tooltip="Lvl eq." data-tooltip-direction="LEFT">
+                                    <i class="fa-solid fa-dial-med"></i>&nbsp;<label class="lmb-label-wrap"
+                                        id="lvlLabel">{{options.stats.[0].ECL}}</label>
+                                </div>
+                            </div>
+                            <div class="lmb-stat flex1" data-tooltip="Damage x Attacks" data-tooltip-direction="LEFT">
+                                <i class="fa-solid fa-swords"></i>&nbsp;<label class="lmb-label-wrap"
+                                    id="dmgLabel">{{options.stats.[0].DpACalc}} x
+                                    1</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex2">
+                        <div class="flexcol">
+                            <div class="flexrow flex1">
+                                <div class="lmb-stat" data-tooltip="Str" data-tooltip-direction="LEFT">
+                                    <i class="fa-solid fa-dumbbell"></i>&nbsp;<label id="strLabel">10</label>
+                                </div>
+                                <div class="lmb-stat" data-tooltip="Dex" data-tooltip-direction="LEFT">
+                                    <i class="fa-solid fa-bolt"></i>&nbsp;<label id="dexLabel">10</label>
+                                </div>
+                                <div class="lmb-stat" data-tooltip="Con" data-tooltip-direction="LEFT">
+                                    <i class="fa-solid fa-skeleton-ribs"></i>&nbsp;<label id="conLabel">10</label>
+                                </div>
+                            </div>
+                            <div class="flexrow flex1">
+                                <div class="lmb-stat" data-tooltip="Int" data-tooltip-direction="LEFT">
+                                    <i class="fa-solid fa-lightbulb"></i>&nbsp;<label id="intLabel">10</label>
+                                </div>
+                                <div class="lmb-stat" data-tooltip="Wis" data-tooltip-direction="LEFT">
+                                    <i class="fa-solid fa-leaf"></i>&nbsp;<label id="wisLabel">10</label>
+                                </div>
+                                <div class="lmb-stat" data-tooltip="Cha" data-tooltip-direction="LEFT">
+                                    <i class="fa-solid fa-mandolin"></i>&nbsp;<label id="chaLabel">10</label>
+                                </div>
+                            </div>
+                            <div class="flexrow flex1" style="align-items: start; max-width: 100%;">
+                                <div class="lmb-stat" data-tooltip="Saving Throws" data-tooltip-direction="LEFT">
+                                    <i class="fa-solid fa-shield-heart"></i></i>&nbsp;<label class="lmb-stat-no-h-grow"
+                                        id="stLabel"></label>
+                                </div>
+                            </div>
+                            <div class="flexcol flex3">
+                                <header>
+                                    <h3>Features</h3>
+                                </header>
+                                <div id="lmb-feature-content" class="flexcol flex3" style="flex-direction: column; max-height: 100px;">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
