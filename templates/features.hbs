@@ -1,0 +1,15 @@
+<div class="flexcol flex1" style="overflow-y: auto;">
+    {{#each features}}
+        <div class="flexrow flex1">
+            <div class="flexcol flex3">
+                <div class="flexrow flex1">
+                    <label class="flex3">
+                        <h4>{{this.name}}</h4>
+                    </label>
+                    <span class="flex0" data-tooltip="{{this.desc}}"><i class="fa-solid fa-circle-question"></i> </span>
+                </div>
+            </div>
+            <a class="flex0 lmb-delete-entry" style="margin-left: 1em;" data-idx="{{@index}}"><i class="fa-solid fa-trash"></i></a>
+        </div>
+    {{/each}}
+</div>

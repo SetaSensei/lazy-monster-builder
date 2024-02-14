@@ -11,11 +11,8 @@ const MONSTERS_STATS = [
     "NoA": "1",
     "DpA": "2",
     "DpACalc": "1d4",
-    "example": [
-      "Commoner",
-      "rat",
-      "spider"
-    ]
+    "example": "Commoner, rat, spider",
+    "example_trunc": "Commoner, rat, spider"
   },
   {
     "CR": "1/8",
@@ -29,12 +26,8 @@ const MONSTERS_STATS = [
     "NoA": "1",
     "DpA": "3",
     "DpACalc": "1d4+1",
-    "example": [
-      "Bandit",
-      "cultist",
-      "giant",
-      "rat"
-    ]
+    "example_string": "Bandit, cultist, giant, rat",
+    "example_trunc": "Bandit, cultist, giant, rat"
   },
   {
     "CR": "1/4",
@@ -48,11 +41,8 @@ const MONSTERS_STATS = [
     "NoA": "1",
     "DpA": "5",
     "DpACalc": "1d6+2",
-    "example": [
-      "Acolyte",
-      "skeleton",
-      "wolf"
-    ]
+    "example_string": "Acolyte, skeleton, wolf",
+    "example_trunc": "Acolyte, skeleton, wolf"
   },
   {
     "CR": "1/2",
@@ -66,12 +56,8 @@ const MONSTERS_STATS = [
     "NoA": "1",
     "DpA": "10",
     "DpACalc": "2d6+3",
-    "example": [
-      "Black",
-      "bear",
-      "scout",
-      "shadow"
-    ]
+    "example_string": "Black bear, scout, shadow",
+    "example_trunc": "Black bear, scout, shadow"
   },
   {
     "CR": "1",
@@ -85,12 +71,8 @@ const MONSTERS_STATS = [
     "NoA": "2",
     "DpA": "6",
     "DpACalc": "1d8+2",
-    "example": [
-      "Dire",
-      "wolf",
-      "specter",
-      "spy"
-    ]
+    "example_string": "Dire wolf, specter, spy",
+    "example_trunc": "Dire wolf, specter, spy"
   },
   {
     "CR": "2",
@@ -104,11 +86,8 @@ const MONSTERS_STATS = [
     "NoA": "2",
     "DpA": "9",
     "DpACalc": "2d6+2",
-    "example": [
-      "Ghast",
-      "ogre",
-      "priest"
-    ]
+    "example_string": "Ghast, ogre, priest",
+    "example_trunc": "Ghast, ogre, priest"
   },
   {
     "CR": "3",
@@ -122,11 +101,8 @@ const MONSTERS_STATS = [
     "NoA": "2",
     "DpA": "12",
     "DpACalc": "2d8+3",
-    "example": [
-      "Knight",
-      "mummy",
-      "werewolf"
-    ]
+    "example_string": "Knight, mummy, werewolf",
+    "example_trunc": "Knight, mummy, werewolf"
   },
   {
     "CR": "4",
@@ -140,10 +116,8 @@ const MONSTERS_STATS = [
     "NoA": "2",
     "DpA": "15",
     "DpACalc": "3d8+2",
-    "example": [
-      "Ettin",
-      "ghost"
-    ]
+    "example_string": "Ettin, ghost",
+    "example_trunc": "Ettin, ghost"
   },
   {
     "CR": "5",
@@ -157,12 +131,8 @@ const MONSTERS_STATS = [
     "NoA": "3",
     "DpA": "12",
     "DpACalc": "3d6+2",
-    "example": [
-      "Elemental",
-      "gladiator",
-      "vampire",
-      "spawn"
-    ]
+    "example_string": "Elemental, gladiator, vampire spawn",
+    "example_trunc": "Elemental, gladiator,..."
   },
   {
     "CR": "6",
@@ -176,11 +146,8 @@ const MONSTERS_STATS = [
     "NoA": "3",
     "DpA": "14",
     "DpACalc": "3d6+4",
-    "example": [
-      "Mage",
-      "medusa",
-      "wyvern"
-    ]
+    "example_string": "Mage, medusa, wyvern",
+    "example_trunc": "Mage, medusa, wyvern"
   },
   {
     "CR": "7",
@@ -194,13 +161,8 @@ const MONSTERS_STATS = [
     "NoA": "3",
     "DpA": "16",
     "DpACalc": "3d8+3",
-    "example": [
-      "Stone",
-      "giant",
-      "young",
-      "black",
-      "dragon"
-    ]
+    "example_string": "Stone giant, young black dragon",
+    "example_trunc": "Stone giant, young black dragon"
   },
   {
     "CR": "8",
@@ -214,11 +176,9 @@ const MONSTERS_STATS = [
     "NoA": "3",
     "DpA": "18",
     "DpACalc": "3d10+2",
-    "example": [
-      "Assassin",
-      "frost",
-      "giant"
-    ]
+
+    "example_string": "Assassin, frost giant",
+    "example_trunc": "Assassin, frost giant"
   },
   {
     "CR": "9",
@@ -232,15 +192,8 @@ const MONSTERS_STATS = [
     "NoA": "3",
     "DpA": "22",
     "DpACalc": "3d12+3",
-    "example": [
-      "Bone",
-      "devil",
-      "fire",
-      "giant",
-      "young",
-      "blue",
-      "dragon"
-    ]
+    "example_string": "Bone devil, fire giant, young blue, dragon",
+    "example_trunc": "Bone devil, fire giant,..."
   },
   {
     "CR": "10",
@@ -254,13 +207,8 @@ const MONSTERS_STATS = [
     "NoA": "4",
     "DpA": "16",
     "DpACalc": "3d8+3",
-    "example": [
-      "Stone",
-      "golem",
-      "young",
-      "red",
-      "dragon"
-    ]
+    "example_string": "Stone golem, young red dragon",
+    "example_trunc": "Stone golem, young red dragon"
   },
   {
     "CR": "11",
@@ -274,12 +222,8 @@ const MONSTERS_STATS = [
     "NoA": "4",
     "DpA": "18",
     "DpACalc": "3d10+2",
-    "example": [
-      "Djinni",
-      "efreeti",
-      "horned",
-      "devil"
-    ]
+    "example_string": "Djinni, efreeti, horned devil",
+    "example_trunc": "Djinni, efreeti, horned devil"
   },
   {
     "CR": "12",
@@ -293,10 +237,8 @@ const MONSTERS_STATS = [
     "NoA": "4",
     "DpA": "19",
     "DpACalc": "3d10+3",
-    "example": [
-      "Archmage",
-      "erinyes"
-    ]
+    "example_string": "Archmage, erinyes",
+    "example_trunc": "Archmage, erinyes"
   },
   {
     "CR": "13",
@@ -310,14 +252,8 @@ const MONSTERS_STATS = [
     "NoA": "4",
     "DpA": "21",
     "DpACalc": "4d8+3",
-    "example": [
-      "Adult",
-      "white",
-      "dragon",
-      "storm",
-      "giant",
-      "vampire"
-    ]
+    "example_string": "Adult white dragon, storm giant, vampire",
+    "example_trunc": "Adult white dragon,..."
   },
   {
     "CR": "14",
@@ -331,13 +267,8 @@ const MONSTERS_STATS = [
     "NoA": "4",
     "DpA": "22",
     "DpACalc": "4d10",
-    "example": [
-      "Adult",
-      "black",
-      "dragon",
-      "ice",
-      "devil"
-    ]
+    "example_string": "Adult black dragon, ice devil",
+    "example_trunc": "Adult black dragon, ice devil"
   },
   {
     "CR": "15",
@@ -351,15 +282,8 @@ const MONSTERS_STATS = [
     "NoA": "5",
     "DpA": "19",
     "DpACalc": "3d10+3",
-    "example": [
-      "Adult",
-      "green",
-      "dragon",
-      "mummy",
-      "lord",
-      "purple",
-      "worm"
-    ]
+    "example_string": "Adult green dragon, mummy lord, purple worm",
+    "example_trunc": "Adult green dragon,..."
   },
   {
     "CR": "16",
@@ -373,14 +297,8 @@ const MONSTERS_STATS = [
     "NoA": "5",
     "DpA": "22",
     "DpACalc": "3d12+3",
-    "example": [
-      "Adult",
-      "blue",
-      "dragon",
-      "iron",
-      "golem",
-      "marilith"
-    ]
+    "example_string": "Adult blue dragon, iron golem, marilith",
+    "example_trunc": "Adult blue dragon,..."
   },
   {
     "CR": "17",
@@ -394,11 +312,8 @@ const MONSTERS_STATS = [
     "NoA": "5",
     "DpA": "21",
     "DpACalc": "4d8+3",
-    "example": [
-      "Adult",
-      "red",
-      "dragon"
-    ]
+    "example_string": "Adult red dragon",
+    "example_trunc": "Adult red dragon"
   },
   {
     "CR": "18",
@@ -412,9 +327,8 @@ const MONSTERS_STATS = [
     "NoA": "5",
     "DpA": "23",
     "DpACalc": "4d10+1",
-    "example": [
-      "Demilich"
-    ]
+    "example_string": "Demilich",
+    "example_trunc": "Demilich"
   },
   {
     "CR": "19",
@@ -428,9 +342,8 @@ const MONSTERS_STATS = [
     "NoA": "5",
     "DpA": "24",
     "DpACalc": "4d10+2",
-    "example": [
-      "Balor"
-    ]
+    "example_string": "Balor",
+    "example_trunc": "Balor"
   },
   {
     "CR": "20",
@@ -444,13 +357,8 @@ const MONSTERS_STATS = [
     "NoA": "5",
     "DpA": "26",
     "DpACalc": "4d12",
-    "example": [
-      "Ancient",
-      "white",
-      "dragon",
-      "pit",
-      "fiend"
-    ]
+    "example_string": "Ancient white dragon, pit fiend",
+    "example_trunc": "Ancient white dragon, pit fiend"
   },
   {
     "CR": "21",
@@ -464,13 +372,8 @@ const MONSTERS_STATS = [
     "NoA": "5",
     "DpA": "30",
     "DpACalc": "4d12+4",
-    "example": [
-      "Ancient",
-      "black",
-      "dragon",
-      "lich",
-      "solar"
-    ]
+    "example_string": "Ancient black dragon, lich, solar",
+    "example_trunc": "Ancient black dragon, lich,..."
   },
   {
     "CR": "22",
@@ -484,11 +387,8 @@ const MONSTERS_STATS = [
     "NoA": "5",
     "DpA": "34",
     "DpACalc": "4d12+8",
-    "example": [
-      "Ancient",
-      "green",
-      "dragon"
-    ]
+    "example_string": "Ancient green dragon",
+    "example_trunc": "Ancient green dragon"
   },
   {
     "CR": "23",
@@ -502,12 +402,8 @@ const MONSTERS_STATS = [
     "NoA": "5",
     "DpA": "37",
     "DpACalc": "6d10+4",
-    "example": [
-      "Ancient",
-      "blue",
-      "dragon",
-      "kraken"
-    ]
+    "example_string": "Ancient blue dragon, kraken",
+    "example_trunc": "Ancient blue dragon, kraken"
   },
   {
     "CR": "24",
@@ -521,11 +417,8 @@ const MONSTERS_STATS = [
     "NoA": "5",
     "DpA": "41",
     "DpACalc": "6d10+8",
-    "example": [
-      "Ancient",
-      "red",
-      "dragon"
-    ]
+    "example_string": "Ancient red dragon",
+    "example_trunc": "Ancient red dragon"
   },
   {
     "CR": "25",
@@ -539,8 +432,8 @@ const MONSTERS_STATS = [
     "NoA": "5",
     "DpA": "44",
     "DpACalc": "6d10+11",
-    "example": [
-    ]
+    "example_string": "",
+    "example_trunc": ""
   },
   {
     "CR": "26",
@@ -554,9 +447,8 @@ const MONSTERS_STATS = [
     "NoA": "5",
     "DpA": "48",
     "DpACalc": "6d10+15",
-    "example": [
-      ""
-    ]
+    "example_string": "",
+    "example_trunc": ""
   },
   {
     "CR": "27",
@@ -570,9 +462,8 @@ const MONSTERS_STATS = [
     "NoA": "5",
     "DpA": "52",
     "DpACalc": "6d10+19",
-    "example": [
-      ""
-    ]
+    "example_string": "",
+    "example_trunc": ""
   },
   {
     "CR": "28",
@@ -586,9 +477,8 @@ const MONSTERS_STATS = [
     "NoA": "5",
     "DpA": "55",
     "DpACalc": "6d10+22",
-    "example": [
-      ""
-    ]
+    "example_string": "",
+    "example_trunc": ""
   },
   {
     "CR": "29",
@@ -602,9 +492,8 @@ const MONSTERS_STATS = [
     "NoA": "5",
     "DpA": "59",
     "DpACalc": "6d10+26",
-    "example": [
-      ""
-    ]
+    "example_string": "",
+    "example_trunc": ""
   },
   {
     "CR": "30",
@@ -618,9 +507,8 @@ const MONSTERS_STATS = [
     "NoA": "5",
     "DpA": "62",
     "DpACalc": "6d10+29",
-    "example": [
-      "Tarrasque"
-    ]
+    "example_string": "Tarrasque",
+    "example_trunc": "Tarrasque"
   }
 ]
 
@@ -642,14 +530,265 @@ const MONSTERS_TYPE = [
 ]
 
 const MONSTERS_FEATURES = [
-  { name: "Damaging Blast" },
-  { name: "Damage Reflection" },
-  { name: "Misty Step" },
-  { name: "Knockdown" },
-  { name: "Restraining Grab" },
-  { name: "Damaging Aura" },
-  { name: "Energy Weapons" },
-  { name: "Damage Transference" }
+  {
+    name: "Cunning Action",
+    isEffect: false,
+    isDmg: false,
+    desc: "On each of their turns, this creature can use a bonus action to take the Dash, Disengage, or Hide action.",
+    item: {
+      "name": "Cunning Action",
+      "type": "feat",
+      "img": "icons/magic/control/hypnosis-mesmerism-watch.webp",
+      "system": {
+        "description": {
+          "value": "<p>On each of their turns, this creature can use a bonus action to take the Dash, Disengage, or Hide action.</p>",
+        },
+        "activation": {
+          "type": "bonus",
+          "cost": 1,
+        },
+        "target": {
+          "type": "self",
+        },
+        "range": {
+          "units": "self"
+        },
+        "type": {
+          "value": "monster",
+        }
+      }
+    }
+  },
+  {
+    name: "Damaging Aura",
+    isEffect: false,
+    divideDmg: 2,
+    reduceAtk: true,
+    isDmg: true,
+    desc: "Each creature who starts their turn within 10 feet of this creature takes damage of a type appropriate to the creature. The damage dealt is equal to half the damage of one of this creature's attacks. If you give a creature this feature, give them one less attack than normal.",
+    item: {
+      "name": "Damaging Aura",
+      "type": "feat",
+      "img": "icons/magic/unholy/silhouette-light-fire-blue.webp",
+      "system": {
+        "description": {
+          "value": "<p>Each creature who starts their turn within 10 feet of this creature takes damage of a type appropriate to the creature. The damage dealt is equal to half the damage of one of this creature's attacks. If you give a creature this feature, give them one less attack than normal.</p>",
+        },
+        "activation": {
+          "type": "none"
+        },
+        "target": {
+          "type": "self"
+        },
+        "range": {
+          "value": 10,
+          "units": "ft"
+        },
+        "ability": "none",
+        "actionType": "other",
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "properties": [
+          "mgc"
+        ],
+      }
+    }
+  },
+  {
+    name: "Damaging Blast",
+    isEffect: false,
+    isDmg: true,
+    desc: "This creature has one or more single-target ranged attacks using the attack bonus and damage calculated above, and which deal damage of an appropriate type.",
+    item: {
+      "name": "Damaging Blast",
+      "type": "weapon",
+      "img": "icons/magic/light/explosion-impact-purple.webp",
+      "system": {
+        "description": {
+          "value": "<p>This creature has one or more single-target ranged attacks using the attack bonus and damage calculated above, and which deal damage of an appropriate type.</p>",
+        },
+        "proficient": 0,
+        "activation": {
+          "type": "action",
+          "cost": 1,
+        },
+        "target": {
+          "value": 1,
+          "type": "creature"
+        },
+        "range": {
+          "value": 60,
+          "units": "ft"
+        },
+        "actionType": "rwak",
+        "type": {
+          "value": "natural",
+          "baseItem": ""
+        }
+      }
+    }
+  },
+  {
+    name: "Damage Reflection",
+    isEffect: false,
+    reduceAtk: true,
+    isDmg: false,
+    desc: "Whenever a creature within 5 feet of this creature hits them with a melee attack, the attacker takes damage in return of a type appropriate to the creature. The damage dealt is equal to half the damage of one of this creature's attacks. If you give a creature this feature, give them one less attack than normal.",
+    item: {
+      "name": "Damage Reflection",
+      "type": "feat",
+      "img": "icons/magic/defensive/shield-barrier-deflect-teal.webp",
+      "system": {
+        "description": {
+          "value": "<p>Whenever a creature within 5 feet of this creature hits them with a melee attack, the attacker takes damage in return of a type appropriate to the creature. The damage dealt is equal to half the damage of one of this creature's attacks. If you give a creature this feature, give them one less attack than normal.</p>",
+        },
+      }
+    }
+  },
+  {
+    name: "Damage Transference",
+    isEffect: false,
+    isDmg: false,
+    desc: "When this creature takes damage, they can transfer half or all of that damage (your choice) to a willing creature within 30 or 60 feet of them. This feature is particularly good for boss monsters.",
+    item: {
+      "name": "Damage Transference",
+      "type": "feat",
+      "img": "icons/magic/control/energy-stream-link-white.webp",
+      "system": {
+        "description": {
+          "value": "<p>When this creature takes damage, they can transfer half or all of that damage (your choice) to a willing creature within 30 or 60 feet of them. This feature is particularly good for boss monsters.</p>",
+        }
+      }
+    }
+  },
+  {
+    name: "Energy Weapons (bonus damage)",
+    isEffect: true,
+    isDmg: true,
+    desc: "The creature's weapon attacks deal extra damage of an appropriate type. You can add this damage on top of the creature's regular damage output to give them a combat boost, or you can replace some of the creature's normal weapon damage with this energy damage.",
+    item: {
+      "name": "Energy Weapons (bonus damage)",
+      "type": "feat",
+      "img": "icons/magic/fire/dagger-rune-enchant-flame-blue-yellow.webp",
+      "system": {
+        "description": {
+          "value": "<p>The creature's weapon attacks deal extra damage of an appropriate type. You can add this damage on top of the creature's regular damage output to give them a combat boost, or you can replace some of the creature's normal weapon damage with this energy damage.</p>",
+        },
+        "type": {
+          "value": "monster"
+        },
+        "properties": [
+          "mgc"
+        ],
+      },
+      "effects": [
+        {
+          "name": "Energy Weapons (bonus damage)",
+          "icon": "icons/magic/fire/dagger-rune-enchant-flame-blue-yellow.webp",
+          "disabled": false,
+          "changes": []
+        }
+      ]
+    }
+  },
+  {
+    name: "Energy Weapons (extra attack)",
+    isEffect: false,
+    isDmg: true,
+    desc: "The creature's weapon attacks deal extra damage of an appropriate type. You can add this damage on top of the creature's regular damage output to give them a combat boost, or you can replace some of the creature's normal weapon damage with this energy damage.",
+    item: {
+      "name": "Energy Weapons (extra attack)",
+      "type": "weapon",
+      "img": "icons/magic/symbols/runes-etched-steel-blade.webp",
+      "system": {
+        "description": {
+          "value": "<p>The creature's weapon attacks deal extra damage of an appropriate type. You can add this damage on top of the creature's regular damage output to give them a combat boost, or you can replace some of the creature's normal weapon damage with this energy damage.</p>",
+        },
+        "proficient": 0,
+        "activation": {
+          "type": "action",
+        },
+        "target": {
+          "value": 1,
+          "type": "creature",
+        },
+        "range": {
+          "units": "touch"
+        },
+        "actionType": "msak",
+        "type": {
+          "value": "simpleM",
+          "baseItem": ""
+        }
+      }
+    }
+  },
+  {
+    name: "Knockdown",
+    isEffect: false,
+    isDmg: false,
+    desc: "When this creature hits a target with a melee attack, the target must succeed on a Strength saving throw or be knocked prone.",
+    item: {
+      "name": "Knockdown",
+      "type": "feat",
+      "img": "icons/skills/melee/unarmed-punch-fist-yellow-red.webp",
+      "system": {
+        "description": {
+          "value": "<p>When this creature hits a target with a melee attack, the target must succeed on a Strength saving throw or be knocked prone.</p>",
+          "chat": ""
+        },
+        "actionType": "save",
+        "save": {
+          "ability": "str",
+          "dc": null,
+          "scaling": "str"
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        }
+      }
+    }
+  },
+  {
+    name: "Misty Step",
+    isEffect: false,
+    isDmg: false,
+    desc: "As a bonus action, this creature can teleport up to 30 feet to an unoccupied space they can see.",
+    item: {
+      "name": "Misty Step",
+      "type": "feat",
+      "img": "icons/magic/movement/trail-streak-zigzag-yellow.webp",
+      "system": {
+        "description": {
+          "value": "<p>As a bonus action, this creature can teleport up to 30 feet to an unoccupied space they can see.</p>",
+          "chat": ""
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        }
+      }
+    }
+  },
+  {
+    name: "Restraining Grab",
+    isEffect: false,
+    isDmg: true,
+    desc: "When this creature hits a target with a melee attack, the target is grappled (escape DC based on this creature's Strength or Dexterity modifier). While grappled, the target is restrained.",
+    item: {
+      "name": "Restraining Grab",
+      "type": "feat",
+      "img": "icons/sundries/survival/cuffs-shackles-steel.webp",
+      "system": {
+        "description": {
+          "value": "<p>When this creature hits a target with a melee attack, the target is grappled (escape DC based on this creature's Strength or Dexterity modifier). While grappled, the target is restrained.</p>",
+        }
+      }
+    }
+  }
 ]
 
 const MONSTERS_ARCHETYPES = [
@@ -818,6 +957,8 @@ const MONSTERS_ARCHETYPES = [
     desc: "Representing greater demons, devils, vampires, liches, or powerful spellcasters, the champion serves as a boss for 11th-level characters, an elite foe for two 15th-level characters, or a one-on-one challenge against 17th-level characters. This stat block focuses on Charisma."
   }
 ]
+
+
 
 export {
   MONSTERS_STATS, MONSTERS_TYPE, MONSTERS_ARCHETYPES, MONSTERS_FEATURES
