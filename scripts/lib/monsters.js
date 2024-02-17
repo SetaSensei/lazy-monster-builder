@@ -560,43 +560,6 @@ const MONSTERS_FEATURES = [
     }
   },
   {
-    name: "Damaging Aura",
-    isEffect: false,
-    divideDmg: 2,
-    reduceAtk: true,
-    isDmg: true,
-    desc: "Each creature who starts their turn within 10 feet of this creature takes damage of a type appropriate to the creature. The damage dealt is equal to half the damage of one of this creature's attacks. If you give a creature this feature, give them one less attack than normal.",
-    item: {
-      "name": "Damaging Aura",
-      "type": "feat",
-      "img": "icons/magic/unholy/silhouette-light-fire-blue.webp",
-      "system": {
-        "description": {
-          "value": "<p>Each creature who starts their turn within 10 feet of this creature takes damage of a type appropriate to the creature. The damage dealt is equal to half the damage of one of this creature's attacks. If you give a creature this feature, give them one less attack than normal.</p>",
-        },
-        "activation": {
-          "type": "none"
-        },
-        "target": {
-          "type": "self"
-        },
-        "range": {
-          "value": 10,
-          "units": "ft"
-        },
-        "ability": "none",
-        "actionType": "other",
-        "type": {
-          "value": "monster",
-          "subtype": ""
-        },
-        "properties": [
-          "mgc"
-        ],
-      }
-    }
-  },
-  {
     name: "Damaging Blast",
     isEffect: false,
     isDmg: true,
@@ -660,6 +623,86 @@ const MONSTERS_FEATURES = [
         "description": {
           "value": "<p>When this creature takes damage, they can transfer half or all of that damage (your choice) to a willing creature within 30 or 60 feet of them. This feature is particularly good for boss monsters.</p>",
         }
+      }
+    }
+  },
+  {
+    name: "Damaging Aura",
+    isEffect: false,
+    divideDmg: 2,
+    reduceAtk: true,
+    isDmg: true,
+    desc: "Each creature who starts their turn within 10 feet of this creature takes damage of a type appropriate to the creature. The damage dealt is equal to half the damage of one of this creature's attacks. If you give a creature this feature, give them one less attack than normal.",
+    item: {
+      "name": "Damaging Aura",
+      "type": "feat",
+      "img": "icons/magic/unholy/silhouette-light-fire-blue.webp",
+      "system": {
+        "description": {
+          "value": "<p>Each creature who starts their turn within 10 feet of this creature takes damage of a type appropriate to the creature. The damage dealt is equal to half the damage of one of this creature's attacks. If you give a creature this feature, give them one less attack than normal.</p>",
+        },
+        "activation": {
+          "type": "none"
+        },
+        "target": {
+          "type": "self"
+        },
+        "range": {
+          "value": 10,
+          "units": "ft"
+        },
+        "ability": "none",
+        "actionType": "other",
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "properties": [
+          "mgc"
+        ],
+      }
+    }
+  },
+  ,
+  {
+    name: "Damaging Burst",
+    isEffect: false,
+    isDmg: true,
+    hasSave: true,
+    divideDmg: 2,
+    useDpR: true,
+    desc: "As an action, this creature can create a burst of energy, magic, spines, or some other effect in a 10-foot-radius sphere, either around themself or at a point within 120 feet. Each creature in that area must make a Dexterity, Constitution, or Wisdom saving throw (your choice, based on the type of burst). On a failure, a target takes damage of an appropriate type equal to half this creature's total damage per round. On a success, a target takes half as much damage.",
+    item: {
+      "name": "Damaging Burst",
+      "type": "weapon",
+      "img": "icons/magic/lightning/orb-ball-purple.webp",
+      "system": {
+        "description": {
+          "value": "<p>As an action, this creature can create a burst of energy, magic, spines, or some other effect in a 10-foot-radius sphere, either around themself or at a point within 120 feet. Each creature in that area must make a Dexterity, Constitution, or Wisdom saving throw (your choice, based on the type of burst). On a failure, a target takes damage of an appropriate type equal to half this creature's total damage per round. On a success, a target takes half as much damage.</p>",
+          "chat": ""
+        },
+        "activation": {
+          "type": "action",
+          "cost": 1,
+          "condition": ""
+        },
+        "target": {
+          "value": 10,
+          "units": "ft",
+          "type": "sphere",
+          "prompt": true
+        },
+        "range": {
+          "value": 120,
+          "long": null,
+          "units": "ft"
+        },
+        "actionType": "save",
+        "save": {
+          "ability": "dex",
+          "dc": null,
+          "scaling": "flat"
+        },
       }
     }
   },
@@ -776,7 +819,7 @@ const MONSTERS_FEATURES = [
   {
     name: "Restraining Grab",
     isEffect: false,
-    isDmg: true,
+    isDmg: false,
     desc: "When this creature hits a target with a melee attack, the target is grappled (escape DC based on this creature's Strength or Dexterity modifier). While grappled, the target is restrained.",
     item: {
       "name": "Restraining Grab",
@@ -811,7 +854,8 @@ const MONSTERS_ARCHETYPES = [
       wis: { value: 12, proficient: 0 },
       cha: { value: 10, proficient: 0 },
     },
-    desc: 'The low-CR minions represented by this stat block might include ravenous rats, weak skeletons, shifty bandits, or low-ranking cultists. A minion can serve as a one-on-one combatant against 1st-level characters, or can be deployed in large groups at 4th level or above. This stat block focuses on Dexterity as its primary ability.'
+    desc: 'The low-CR minions represented by this stat block might include ravenous rats, weak skeletons, shifty bandits, or low-ranking cultists. A minion can serve as a one-on-one combatant against 1st-level characters, or can be deployed in large groups at 4th level or above. This stat block focuses on Dexterity as its primary ability.',
+    short: 'The low-CR minions represented by this stat block might include ravenous rats, weak skeletons, shifty bandits, or low-ranking cultists. A minion can serve as a one-on-one combatant against 1st-level characters, or [...]'
   },
   {
     name: "Soldier",
@@ -832,7 +876,8 @@ const MONSTERS_ARCHETYPES = [
       wis: { value: 10, proficient: 0 },
       cha: { value: 10, proficient: 0 },
     },
-    desc: "Representing seasoned guards, trained soldiers, powerful bandits, murderous humanoids, or armed undead, the soldier stat block works well as a boss at 1st level, an elite foe for two 2nd-level characters, or one-on-one combatants at 4th level, or in large groups at 6th level and above. Strength is this stat block's primary ability."
+    desc: "Representing seasoned guards, trained soldiers, powerful bandits, murderous humanoids, or armed undead, the soldier stat block works well as a boss at 1st level, an elite foe for two 2nd-level characters, or one-on-one combatants at 4th level, or in large groups at 6th level and above. Strength is this stat block's primary ability.",
+    short: "Representing seasoned guards, trained soldiers, powerful bandits, murderous humanoids, or armed undead, the soldier stat block works well as a boss at 1st level, an elite foe for two 2nd-level characters, or [...]"
   },
   {
     name: "Brute",
@@ -856,7 +901,8 @@ const MONSTERS_ARCHETYPES = [
     skills: {
       ath: { value: 1 }
     },
-    desc: "Heavy-hitting veterans, capable bodyguards, low-ranking demons or devils, dangerous monsters in the wild, and powerful humanoids can all be represented by this stat block. A brute can serve as a boss against 2nd-level characters, an elite foe against two 4th-level characters, or a one-on-one opponent at 5th level, or in large groups at 10th level. This stat block relies on Strength."
+    desc: "Heavy-hitting veterans, capable bodyguards, low-ranking demons or devils, dangerous monsters in the wild, and powerful humanoids can all be represented by this stat block. A brute can serve as a boss against 2nd-level characters, an elite foe against two 4th-level characters, or a one-on-one opponent at 5th level, or in large groups at 10th level. This stat block relies on Strength.",
+    short: "Heavy-hitting veterans, capable bodyguards, low-ranking demons or devils, dangerous monsters in the wild, and powerful humanoids can all be represented by this stat block. A brute can serve as a boss against 2nd-level characters, [...]"
   },
   {
     name: "Specialist",
@@ -882,7 +928,8 @@ const MONSTERS_ARCHETYPES = [
       prc: { value: 1 },
       ste: { value: 1 }
     },
-    desc: "This stat block can represent spies, assassins, hunters, and trained elite forces. The specialist serves as a boss for 4th-level characters, an elite opponent versus two 5th-level characters, or a one-on-one combatant for 10th-level characters, or in large groups against 16th-level characters. Dexterity is this stat block's primary ability."
+    desc: "This stat block can represent spies, assassins, hunters, and trained elite forces. The specialist serves as a boss for 4th-level characters, an elite opponent versus two 5th-level characters, or a one-on-one combatant for 10th-level characters, or in large groups against 16th-level characters. Dexterity is this stat block's primary ability.",
+    short: "This stat block can represent spies, assassins, hunters, and trained elite forces. The specialist serves as a boss for 4th-level characters, an elite opponent versus two 5th-level characters, or a one-on-one combatant [...]"
   },
   {
     name: "Myrmidon",
@@ -906,7 +953,8 @@ const MONSTERS_ARCHETYPES = [
     skills: {
       prc: { value: 1 }
     },
-    desc: "Powerful elite bodyguards, high priests, wizards, warlocks, sorcerers, demons, and devils can all be represented by this stat block. A myrmidon can serve as a boss monster for 5th-level characters, an elite combatant against two characters of 7th level, or a one-on-one combatant against 14th-level characters, or in large groups against 20th-level characters. This stat block focuses on Intelligence."
+    desc: "Powerful elite bodyguards, high priests, wizards, warlocks, sorcerers, demons, and devils can all be represented by this stat block. A myrmidon can serve as a boss monster for 5th-level characters, an elite combatant against two characters of 7th level, or a one-on-one combatant against 14th-level characters, or in large groups against 20th-level characters. This stat block focuses on Intelligence.",
+    short: "Powerful elite bodyguards, high priests, wizards, warlocks, sorcerers, demons, and devils can all be represented by this stat block. A myrmidon can serve as a boss monster for 5th-level characters, an elite combatant against [...]"
   },
   {
     name: "Sentinel",
@@ -930,7 +978,8 @@ const MONSTERS_ARCHETYPES = [
     skills: {
       prc: { value: 1 }
     },
-    desc: "This stat block is a good fit for strong, often-otherworldly creatures such as demons, devils, impressive beings of the Outer Planes, guardian constructs, or powerful undead. The sentinel can serve as a boss for 7th-level characters, an elite foe against two 12th-level characters, or can stand one-on-one against 16th-level characters. This stat block focuses on Strength."
+    desc: "This stat block is a good fit for strong, often-otherworldly creatures such as demons, devils, impressive beings of the Outer Planes, guardian constructs, or powerful undead. The sentinel can serve as a boss for 7th-level characters, an elite foe against two 12th-level characters, or can stand one-on-one against 16th-level characters. This stat block focuses on Strength.",
+    short: "This stat block is a good fit for strong, often-otherworldly creatures such as demons, devils, impressive beings of the Outer Planes, guardian constructs, or powerful undead. The sentinel can serve as a boss for 7th-level [...]"
   },
   {
     name: "Champion",
@@ -954,7 +1003,8 @@ const MONSTERS_ARCHETYPES = [
     skills: {
       prc: { value: 1 }
     },
-    desc: "Representing greater demons, devils, vampires, liches, or powerful spellcasters, the champion serves as a boss for 11th-level characters, an elite foe for two 15th-level characters, or a one-on-one challenge against 17th-level characters. This stat block focuses on Charisma."
+    desc: "Representing greater demons, devils, vampires, liches, or powerful spellcasters, the champion serves as a boss for 11th-level characters, an elite foe for two 15th-level characters, or a one-on-one challenge against 17th-level characters. This stat block focuses on Charisma.",
+    short: "Representing greater demons, devils, vampires, liches, or powerful spellcasters, the champion serves as a boss for 11th-level characters, an elite foe for two 15th-level characters, or a one-on-one challenge against [...]"
   }
 ]
 

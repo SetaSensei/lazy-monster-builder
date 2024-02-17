@@ -64,6 +64,8 @@
     -webkit-line-clamp: 3;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .lmb-description {
