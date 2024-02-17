@@ -854,7 +854,8 @@ const MONSTERS_ARCHETYPES = [
       wis: { value: 12, proficient: 0 },
       cha: { value: 10, proficient: 0 },
     },
-    desc: 'The low-CR minions represented by this stat block might include ravenous rats, weak skeletons, shifty bandits, or low-ranking cultists. A minion can serve as a one-on-one combatant against 1st-level characters, or can be deployed in large groups at 4th level or above. This stat block focuses on Dexterity as its primary ability.'
+    desc: 'The low-CR minions represented by this stat block might include ravenous rats, weak skeletons, shifty bandits, or low-ranking cultists. A minion can serve as a one-on-one combatant against 1st-level characters, or can be deployed in large groups at 4th level or above. This stat block focuses on Dexterity as its primary ability.',
+    short: 'The low-CR minions represented by this stat block might include ravenous rats, weak skeletons, shifty bandits, or low-ranking cultists. A minion can serve as a one-on-one combatant against 1st-level characters, or [...]'
   },
   {
     name: "Soldier",
@@ -875,7 +876,8 @@ const MONSTERS_ARCHETYPES = [
       wis: { value: 10, proficient: 0 },
       cha: { value: 10, proficient: 0 },
     },
-    desc: "Representing seasoned guards, trained soldiers, powerful bandits, murderous humanoids, or armed undead, the soldier stat block works well as a boss at 1st level, an elite foe for two 2nd-level characters, or one-on-one combatants at 4th level, or in large groups at 6th level and above. Strength is this stat block's primary ability."
+    desc: "Representing seasoned guards, trained soldiers, powerful bandits, murderous humanoids, or armed undead, the soldier stat block works well as a boss at 1st level, an elite foe for two 2nd-level characters, or one-on-one combatants at 4th level, or in large groups at 6th level and above. Strength is this stat block's primary ability.",
+    short: "Representing seasoned guards, trained soldiers, powerful bandits, murderous humanoids, or armed undead, the soldier stat block works well as a boss at 1st level, an elite foe for two 2nd-level characters, or [...]"
   },
   {
     name: "Brute",
@@ -899,7 +901,8 @@ const MONSTERS_ARCHETYPES = [
     skills: {
       ath: { value: 1 }
     },
-    desc: "Heavy-hitting veterans, capable bodyguards, low-ranking demons or devils, dangerous monsters in the wild, and powerful humanoids can all be represented by this stat block. A brute can serve as a boss against 2nd-level characters, an elite foe against two 4th-level characters, or a one-on-one opponent at 5th level, or in large groups at 10th level. This stat block relies on Strength."
+    desc: "Heavy-hitting veterans, capable bodyguards, low-ranking demons or devils, dangerous monsters in the wild, and powerful humanoids can all be represented by this stat block. A brute can serve as a boss against 2nd-level characters, an elite foe against two 4th-level characters, or a one-on-one opponent at 5th level, or in large groups at 10th level. This stat block relies on Strength.",
+    short: "Heavy-hitting veterans, capable bodyguards, low-ranking demons or devils, dangerous monsters in the wild, and powerful humanoids can all be represented by this stat block. A brute can serve as a boss against 2nd-level characters, [...]"
   },
   {
     name: "Specialist",
@@ -925,7 +928,8 @@ const MONSTERS_ARCHETYPES = [
       prc: { value: 1 },
       ste: { value: 1 }
     },
-    desc: "This stat block can represent spies, assassins, hunters, and trained elite forces. The specialist serves as a boss for 4th-level characters, an elite opponent versus two 5th-level characters, or a one-on-one combatant for 10th-level characters, or in large groups against 16th-level characters. Dexterity is this stat block's primary ability."
+    desc: "This stat block can represent spies, assassins, hunters, and trained elite forces. The specialist serves as a boss for 4th-level characters, an elite opponent versus two 5th-level characters, or a one-on-one combatant for 10th-level characters, or in large groups against 16th-level characters. Dexterity is this stat block's primary ability.",
+    short: "This stat block can represent spies, assassins, hunters, and trained elite forces. The specialist serves as a boss for 4th-level characters, an elite opponent versus two 5th-level characters, or a one-on-one combatant [...]"
   },
   {
     name: "Myrmidon",
@@ -949,7 +953,8 @@ const MONSTERS_ARCHETYPES = [
     skills: {
       prc: { value: 1 }
     },
-    desc: "Powerful elite bodyguards, high priests, wizards, warlocks, sorcerers, demons, and devils can all be represented by this stat block. A myrmidon can serve as a boss monster for 5th-level characters, an elite combatant against two characters of 7th level, or a one-on-one combatant against 14th-level characters, or in large groups against 20th-level characters. This stat block focuses on Intelligence."
+    desc: "Powerful elite bodyguards, high priests, wizards, warlocks, sorcerers, demons, and devils can all be represented by this stat block. A myrmidon can serve as a boss monster for 5th-level characters, an elite combatant against two characters of 7th level, or a one-on-one combatant against 14th-level characters, or in large groups against 20th-level characters. This stat block focuses on Intelligence.",
+    short: "Powerful elite bodyguards, high priests, wizards, warlocks, sorcerers, demons, and devils can all be represented by this stat block. A myrmidon can serve as a boss monster for 5th-level characters, an elite combatant against [...]"
   },
   {
     name: "Sentinel",
@@ -973,7 +978,8 @@ const MONSTERS_ARCHETYPES = [
     skills: {
       prc: { value: 1 }
     },
-    desc: "This stat block is a good fit for strong, often-otherworldly creatures such as demons, devils, impressive beings of the Outer Planes, guardian constructs, or powerful undead. The sentinel can serve as a boss for 7th-level characters, an elite foe against two 12th-level characters, or can stand one-on-one against 16th-level characters. This stat block focuses on Strength."
+    desc: "This stat block is a good fit for strong, often-otherworldly creatures such as demons, devils, impressive beings of the Outer Planes, guardian constructs, or powerful undead. The sentinel can serve as a boss for 7th-level characters, an elite foe against two 12th-level characters, or can stand one-on-one against 16th-level characters. This stat block focuses on Strength.",
+    short: "This stat block is a good fit for strong, often-otherworldly creatures such as demons, devils, impressive beings of the Outer Planes, guardian constructs, or powerful undead. The sentinel can serve as a boss for 7th-level [...]"
   },
   {
     name: "Champion",
@@ -997,7 +1003,8 @@ const MONSTERS_ARCHETYPES = [
     skills: {
       prc: { value: 1 }
     },
-    desc: "Representing greater demons, devils, vampires, liches, or powerful spellcasters, the champion serves as a boss for 11th-level characters, an elite foe for two 15th-level characters, or a one-on-one challenge against 17th-level characters. This stat block focuses on Charisma."
+    desc: "Representing greater demons, devils, vampires, liches, or powerful spellcasters, the champion serves as a boss for 11th-level characters, an elite foe for two 15th-level characters, or a one-on-one challenge against 17th-level characters. This stat block focuses on Charisma.",
+    short: "Representing greater demons, devils, vampires, liches, or powerful spellcasters, the champion serves as a boss for 11th-level characters, an elite foe for two 15th-level characters, or a one-on-one challenge against [...]"
   }
 ]
 

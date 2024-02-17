@@ -78,6 +78,8 @@ async function showMonsterForm(event) {
             html.find('#chaLabel').text(activeData.abilities.cha.value)
 
             html.find('#lvlLabel').parent().hide()
+            html.find('#monster-desc').text(activeData.short)
+            html.find('#monster-desc').attr('data-tooltip', activeData.desc)
 
             abilities.forEach(a => {
                 const ability = activeData.abilities[a]
@@ -99,12 +101,11 @@ async function showMonsterForm(event) {
 
             abilities.forEach(a => {
                 if (html.find('#' + a + 'Bonus')[0].checked) {
-                    saveProfs.push(capitalizeFirstLetter(a) + ' ' + parseInt(activeData.PAB))
+                    saveProfs.push(capitalizeFirstLetter(a) + ' +' + parseInt(activeData.PAB))
                 }
             })
         }
         html.find('#stLabel').text(saveProfs.join(', '))
-        html.find('#monster-desc').text(activeData.desc || '')
 
         const actualFeatures = html.find('#selectedMonsterStats').data('features')
 
@@ -227,7 +228,6 @@ async function createActor(context) {
             noa--
         }
 
-        const key = f.isDmg ? 'system.bonuses.mwak.damage' : ''
         const item = f.item
 
         if (f.isEffect) {
