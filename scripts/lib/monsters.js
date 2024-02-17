@@ -560,43 +560,6 @@ const MONSTERS_FEATURES = [
     }
   },
   {
-    name: "Damaging Aura",
-    isEffect: false,
-    divideDmg: 2,
-    reduceAtk: true,
-    isDmg: true,
-    desc: "Each creature who starts their turn within 10 feet of this creature takes damage of a type appropriate to the creature. The damage dealt is equal to half the damage of one of this creature's attacks. If you give a creature this feature, give them one less attack than normal.",
-    item: {
-      "name": "Damaging Aura",
-      "type": "feat",
-      "img": "icons/magic/unholy/silhouette-light-fire-blue.webp",
-      "system": {
-        "description": {
-          "value": "<p>Each creature who starts their turn within 10 feet of this creature takes damage of a type appropriate to the creature. The damage dealt is equal to half the damage of one of this creature's attacks. If you give a creature this feature, give them one less attack than normal.</p>",
-        },
-        "activation": {
-          "type": "none"
-        },
-        "target": {
-          "type": "self"
-        },
-        "range": {
-          "value": 10,
-          "units": "ft"
-        },
-        "ability": "none",
-        "actionType": "other",
-        "type": {
-          "value": "monster",
-          "subtype": ""
-        },
-        "properties": [
-          "mgc"
-        ],
-      }
-    }
-  },
-  {
     name: "Damaging Blast",
     isEffect: false,
     isDmg: true,
@@ -660,6 +623,86 @@ const MONSTERS_FEATURES = [
         "description": {
           "value": "<p>When this creature takes damage, they can transfer half or all of that damage (your choice) to a willing creature within 30 or 60 feet of them. This feature is particularly good for boss monsters.</p>",
         }
+      }
+    }
+  },
+  {
+    name: "Damaging Aura",
+    isEffect: false,
+    divideDmg: 2,
+    reduceAtk: true,
+    isDmg: true,
+    desc: "Each creature who starts their turn within 10 feet of this creature takes damage of a type appropriate to the creature. The damage dealt is equal to half the damage of one of this creature's attacks. If you give a creature this feature, give them one less attack than normal.",
+    item: {
+      "name": "Damaging Aura",
+      "type": "feat",
+      "img": "icons/magic/unholy/silhouette-light-fire-blue.webp",
+      "system": {
+        "description": {
+          "value": "<p>Each creature who starts their turn within 10 feet of this creature takes damage of a type appropriate to the creature. The damage dealt is equal to half the damage of one of this creature's attacks. If you give a creature this feature, give them one less attack than normal.</p>",
+        },
+        "activation": {
+          "type": "none"
+        },
+        "target": {
+          "type": "self"
+        },
+        "range": {
+          "value": 10,
+          "units": "ft"
+        },
+        "ability": "none",
+        "actionType": "other",
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "properties": [
+          "mgc"
+        ],
+      }
+    }
+  },
+  ,
+  {
+    name: "Damaging Burst",
+    isEffect: false,
+    isDmg: true,
+    hasSave: true,
+    divideDmg: 2,
+    useDpR: true,
+    desc: "As an action, this creature can create a burst of energy, magic, spines, or some other effect in a 10-foot-radius sphere, either around themself or at a point within 120 feet. Each creature in that area must make a Dexterity, Constitution, or Wisdom saving throw (your choice, based on the type of burst). On a failure, a target takes damage of an appropriate type equal to half this creature's total damage per round. On a success, a target takes half as much damage.",
+    item: {
+      "name": "Damaging Burst",
+      "type": "weapon",
+      "img": "icons/magic/lightning/orb-ball-purple.webp",
+      "system": {
+        "description": {
+          "value": "<p>As an action, this creature can create a burst of energy, magic, spines, or some other effect in a 10-foot-radius sphere, either around themself or at a point within 120 feet. Each creature in that area must make a Dexterity, Constitution, or Wisdom saving throw (your choice, based on the type of burst). On a failure, a target takes damage of an appropriate type equal to half this creature's total damage per round. On a success, a target takes half as much damage.</p>",
+          "chat": ""
+        },
+        "activation": {
+          "type": "action",
+          "cost": 1,
+          "condition": ""
+        },
+        "target": {
+          "value": 10,
+          "units": "ft",
+          "type": "sphere",
+          "prompt": true
+        },
+        "range": {
+          "value": 120,
+          "long": null,
+          "units": "ft"
+        },
+        "actionType": "save",
+        "save": {
+          "ability": "dex",
+          "dc": null,
+          "scaling": "flat"
+        },
       }
     }
   },
@@ -776,7 +819,7 @@ const MONSTERS_FEATURES = [
   {
     name: "Restraining Grab",
     isEffect: false,
-    isDmg: true,
+    isDmg: false,
     desc: "When this creature hits a target with a melee attack, the target is grappled (escape DC based on this creature's Strength or Dexterity modifier). While grappled, the target is restrained.",
     item: {
       "name": "Restraining Grab",

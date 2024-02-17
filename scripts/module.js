@@ -255,14 +255,24 @@ async function createActor(context) {
             ]
         }
         if (f.isDmg) {
-            item.system.attackBonus = stats.atkBonus || stats.PAB,
-                item.system.damage = {
-                    parts: [
-                        [
-                            f.divideDmg ? `floor((${stats.DpACalc})/${f.divideDmg})` : stats.DpACalc
-                        ]
+            var dmgPart = stats.DpACalc
+            if (f.useDpR) {
+                dmgPart = Array(parseInt(stats.NoA)).fill(stats.DpACalc).join("+");
+            }
+            if (f.divideDmg) {
+                dmgPart = `floor((${dmgPart})/${f.divideDmg})`;
+            }
+            item.system.attackBonus = stats.atkBonus || stats.PAB
+            item.system.damage = {
+                parts: [
+                    [
+                        dmgPart
                     ]
-                }
+                ]
+            }
+        }
+        if (f.hasSave) {
+            item.system.save.dc = stats.DC || stats.ACDC
         }
         featTab.push(item)
     }
